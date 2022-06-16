@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume: ");
     }
-
+    //
     @Override
     protected void onPause() {
         super.onPause();
