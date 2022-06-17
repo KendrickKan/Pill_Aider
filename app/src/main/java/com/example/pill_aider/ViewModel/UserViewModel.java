@@ -33,7 +33,4 @@ public class UserViewModel extends AndroidViewModel {
         pillAiderRepository.deleteUser(users);
     }
 
-//    public String twoTimeToString(int h,int m){
-//        String
-//    }
 }
