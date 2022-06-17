@@ -19,7 +19,7 @@ public class UserViewModel extends AndroidViewModel {
         pillAiderRepository = new PillAiderRepository(application);
     }
 
-    LiveData<List<User>> getAllUsersLive(){
+    public LiveData<List<User>> getAllUsersLive(){
         return pillAiderRepository.getAllUsersLive();
     }
 

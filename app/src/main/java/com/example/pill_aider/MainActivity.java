@@ -8,6 +8,8 @@ import com.example.pill_aider.ViewModel.UserViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -16,6 +18,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.pill_aider.databinding.ActivityMainBinding;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
         User user = new User("10","20","30",5,1);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.insertUser(user);
+        userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                StringBuilder text = new StringBuilder();
+                for(int i=0;i<users.size();i++) {
+                    User user = users.get(i);
+                    Log.d(TAG, String.valueOf(user.getId()));
+                }
+            }
+        });
 
     }
     @Override
