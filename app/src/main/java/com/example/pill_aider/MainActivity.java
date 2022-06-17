@@ -3,9 +3,13 @@ package com.example.pill_aider;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.pill_aider.Entity.User;
+import com.example.pill_aider.ViewModel.UserViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,8 +20,9 @@ import com.example.pill_aider.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    UserViewModel userViewModel;
 
-    String TAG = "";
+    String TAG = "MY_TAG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        //KD Test
+        User user = new User("10","20","30",5,1);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.insertUser(user);
+
     }
     @Override
     protected void onResume() {
