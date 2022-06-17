@@ -10,26 +10,14 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment2_to_beginFragment"
-            app:destination="@id/beginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/beginFragment"
-        android:name="com.example.pill_aider.BeginFragment"
-        android:label="fragment_begin"
-        tools:layout="@layout/fragment_begin" >
-        <action
-            android:id="@+id/action_beginFragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            android:id="@+id/action_homeFragment2_to_protocolFragment"
+            app:destination="@id/protocolFragment" />
     </fragment>
     <fragment
         android:id="@+id/pill_List_Fragment"
         android:name="com.example.pill_aider.Pill_List_Fragment"
         android:label="fragment_pill__list_"
         tools:layout="@layout/fragment_pill__list_" >
-        <action
-            android:id="@+id/action_pill_List_Fragment_to_protocolFragment"
-            app:destination="@id/protocolFragment" />
         <action
             android:id="@+id/action_pill_List_Fragment_to_settings_Fragment"
             app:destination="@id/settings_Fragment" />
@@ -39,6 +27,9 @@
         <action
             android:id="@+id/action_pill_List_Fragment_to_change_Pills_Fragment"
             app:destination="@id/change_Pills_Fragment" />
+        <action
+            android:id="@+id/action_pill_List_Fragment_to_chart_Fragment"
+            app:destination="@id/chart_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/protocolFragment"
@@ -46,11 +37,8 @@
         android:label="fragment_protocol"
         tools:layout="@layout/fragment_protocol" >
         <action
-            android:id="@+id/action_protocolFragment_to_pill_List_Fragment"
+            android:id="@+id/action_protocolFragment_to_pill_List_Fragment2"
             app:destination="@id/pill_List_Fragment" />
-        <action
-            android:id="@+id/action_protocolFragment_to_settings_Fragment"
-            app:destination="@id/settings_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/settings_Fragment"
@@ -61,14 +49,11 @@
             android:id="@+id/action_settings_Fragment_to_pill_List_Fragment"
             app:destination="@id/pill_List_Fragment" />
         <action
-            android:id="@+id/action_settings_Fragment_to_protocolFragment"
-            app:destination="@id/protocolFragment" />
-        <action
-            android:id="@+id/action_settings_Fragment_to_beginFragment"
-            app:destination="@id/beginFragment" />
-        <action
             android:id="@+id/action_settings_Fragment_to_developer_Fragment"
             app:destination="@id/developer_Fragment" />
+        <action
+            android:id="@+id/action_settings_Fragment_to_chart_Fragment"
+            app:destination="@id/chart_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/developer_Fragment"
@@ -85,4 +70,16 @@
         android:name="com.example.pill_aider.Change_Pills_Fragment"
         android:label="fragment_change__pills_"
         tools:layout="@layout/fragment_change__pills_" />
+    <fragment
+        android:id="@+id/chart_Fragment"
+        android:name="com.example.pill_aider.Chart_Fragment"
+        android:label="fragment_chart_"
+        tools:layout="@layout/fragment_chart_" >
+        <action
+            android:id="@+id/action_chart_Fragment_to_pill_List_Fragment"
+            app:destination="@id/pill_List_Fragment" />
+        <action
+            android:id="@+id/action_chart_Fragment_to_settings_Fragment"
+            app:destination="@id/settings_Fragment" />
+    </fragment>
 </navigation>
