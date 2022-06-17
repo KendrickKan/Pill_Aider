@@ -7,11 +7,13 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.pill_aider.Dao.ReminderDao;
+import com.example.pill_aider.Dao.ReportDao;
 import com.example.pill_aider.Dao.UserDao;
 import com.example.pill_aider.Entity.Reminder;
+import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
 
-@Database(entities = {User.class, Reminder.class},version = 2,exportSchema = false)
+@Database(entities = {User.class, Reminder.class, Report.class},version = 3,exportSchema = false)
 public abstract class PillAiderDatabase extends RoomDatabase {
     private static PillAiderDatabase INSTANCE;
     //单例
@@ -25,4 +27,5 @@ public abstract class PillAiderDatabase extends RoomDatabase {
     }
     public abstract UserDao getUserDao();
     public abstract ReminderDao getReminderDao();
+    public abstract ReportDao getReportDao();
 }
