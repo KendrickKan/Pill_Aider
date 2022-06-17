@@ -3,7 +3,9 @@ package com.example.pill_aider;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.User;
+import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.UserViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     UserViewModel userViewModel;
+    ReminderViewModel reminderViewModel;
 
     String TAG = "MY_TAG";
     @Override
@@ -58,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");
+        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+        reminderViewModel.insertReminder(reminder);
 
     }
     @Override

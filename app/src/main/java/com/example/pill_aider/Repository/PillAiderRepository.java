@@ -5,20 +5,26 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.pill_aider.Dao.ReminderDao;
 import com.example.pill_aider.Dao.UserDao;
 import com.example.pill_aider.Database.PillAiderDatabase;
+import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.User;
 
 import java.util.List;
 
 public class PillAiderRepository {
     private LiveData<List<User>> allUsersLive;
+    private LiveData<List<Reminder>> allRemindersLive;
     private UserDao userDao;
+    private ReminderDao reminderDao;
 
     public PillAiderRepository(Context context) {
         PillAiderDatabase pillAiderDatabase = PillAiderDatabase.getDatabase(context.getApplicationContext());
         userDao = pillAiderDatabase.getUserDao();
+        reminderDao = pillAiderDatabase.getReminderDao();
         allUsersLive = userDao.getAllUsers();
+        allRemindersLive = reminderDao.getAllReminders();
     }
 
     public void insertUser(User... users) {
@@ -35,6 +41,22 @@ public class PillAiderRepository {
 
     public LiveData<List<User>> getAllUsersLive() {
         return allUsersLive;
+    }
+
+    public void insertReminder(Reminder... reminders){
+        new InsertAsyncTasks(reminderDao).execute(reminders);
+    }
+
+    public void updateReminder(Reminder... reminders){
+        new UpdateAsyncTasks(reminderDao).execute(reminders);
+    }
+
+    public void deleteReminder(Reminder... reminders){
+        new DeleteAsyncTasks(reminderDao).execute(reminders);
+    }
+
+    public LiveData<List<Reminder>> getAllRemindersLive(){
+        return allRemindersLive;
     }
 
     static class InsertAsyncTask extends AsyncTask<User,Void,Void>{
@@ -75,4 +97,43 @@ public class PillAiderRepository {
             return null;
         }
     }
+
+    static class InsertAsyncTasks extends AsyncTask<Reminder,Void,Void>{
+        private ReminderDao reminderDao;
+
+        InsertAsyncTasks(ReminderDao reminderDao){
+            this.reminderDao=reminderDao;
+        }
+        @Override
+        protected Void doInBackground(Reminder... reminders) {
+            reminderDao.insertReminder(reminders[0]);
+            return null;
+        }
+    }
+    static class UpdateAsyncTasks extends AsyncTask<Reminder,Void,Void>{
+        private ReminderDao reminderDao;
+
+        UpdateAsyncTasks(ReminderDao reminderDao){
+            this.reminderDao=reminderDao;
+        }
+        @Override
+        protected Void doInBackground(Reminder... reminders) {
+            reminderDao.updateReminder(reminders[0]);
+            return null;
+        }
+    }
+
+    static class DeleteAsyncTasks extends AsyncTask<Reminder,Void,Void>{
+        private ReminderDao reminderDao;
+
+        DeleteAsyncTasks(ReminderDao reminderDao){
+            this.reminderDao=reminderDao;
+        }
+        @Override
+        protected Void doInBackground(Reminder... reminders) {
+            reminderDao.deleteReminder(reminders[0]);
+            return null;
+        }
+    }
+
 }
