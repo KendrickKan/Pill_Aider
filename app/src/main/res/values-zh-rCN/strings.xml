@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">药丸管家</string>
+    <string name="guide_pill_list">药单</string>
+    <string name="guide_chart">周报</string>
+    <string name="guide_setting">设置</string>
+    <string name="button_enter">开始</string>
+    <string name="hello_blank_fragment">ss</string>
+</resources>
