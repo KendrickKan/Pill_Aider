@@ -4,6 +4,11 @@
     <string name="guide_pill_list">药单</string>
     <string name="guide_chart">周报</string>
     <string name="guide_setting">设置</string>
-    <string name="button_enter">开始</string>
     <string name="hello_blank_fragment">ss</string>
+    <string name="button_Enter">开始</string>
+    <string name="protocal">免责声明</string>
+    <string name="protocal_maintain">由于麻醉类药品处方、急诊处方可能包含致瘾性药物或时效性、专业性要求过高，本软件谢绝处理。根据原卫生部和国家中医药管理局公布的《处方管理办法》，本软件的处方图片识别功能将不会识别淡红底色的麻醉类药品处方和淡黄底色的急诊处方，敬请谅解。
+        本软件及其开发团队不对任何由处方识别、服药提醒等功能导致的医疗问题负责。若对处方用药有疑问，请您第一时间联系医护人员。处方用药请以医护人员指导为准。</string>
+    <string name="button_protocal_QUIT">拒绝</string>
+    <string name="button_protocal_ACCEPT">同意</string>
 </resources>

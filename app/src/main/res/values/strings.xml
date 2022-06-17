@@ -5,5 +5,9 @@
     <string name="guide_setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_enter">Enter</string>
+    <string name="button_Enter">Enter</string>
+    <string name="protocal">Disclaimer</string>
+    <string name="protocal_maintain">Because the prescription of narcotic drugs and emergency prescription may contain addictive drugs or the requirements for timeliness and professionalism are too high, the software refuses to handle them. According to the prescription management measures issued by the former Ministry of health and the State Administration of traditional Chinese medicine, the prescription picture recognition function of this software will not recognize the anesthetic prescriptions with light red background and the emergency prescriptions with light yellow background. Please understand. The software and its development team are not responsible for any medical problems caused by prescription identification, medication reminder and other functions. If you have any questions about prescription medication, please contact the medical staff at the first time. Prescription medication shall be subject to the guidance of medical staff.</string>
+    <string name="button_protocal_QUIT">Quit</string>
+    <string name="button_protocal_ACCEPT">Accept</string>
 </resources>

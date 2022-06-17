@@ -13,7 +13,7 @@ import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
 
-@Database(entities = {User.class, Reminder.class, Report.class},version = 3,exportSchema = false)
+@Database(entities = {User.class, Reminder.class, Report.class},version = 2,exportSchema = false)
 public abstract class PillAiderDatabase extends RoomDatabase {
     private static PillAiderDatabase INSTANCE;
     //单例

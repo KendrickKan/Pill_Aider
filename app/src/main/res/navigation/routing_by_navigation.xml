@@ -3,21 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/routing_by_navigation"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/beginFragment">
     <fragment
-        android:id="@+id/homeFragment2"
-        android:name="com.example.pill_aider.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/beginFragment"
+        android:name="com.example.pill_aider.BeginFragment"
+        android:label="BeginFragment" >
         <action
-            android:id="@+id/action_homeFragment2_to_protocolFragment"
+            android:id="@+id/action_beginFragment_to_protocolFragment"
             app:destination="@id/protocolFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/protocolFragment"
+        android:name="com.example.pill_aider.protocolFragment"
+        android:label="fragment_protocol"
+        tools:layout="@layout/fragment_protocol" >
+        <action
+            android:id="@+id/action_protocolFragment_to_pill_List_Fragment"
+            app:destination="@id/pill_List_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/pill_List_Fragment"
         android:name="com.example.pill_aider.Pill_List_Fragment"
         android:label="fragment_pill__list_"
         tools:layout="@layout/fragment_pill__list_" >
+        <action
+            android:id="@+id/action_pill_List_Fragment_to_chart_Fragment"
+            app:destination="@id/chart_Fragment" />
         <action
             android:id="@+id/action_pill_List_Fragment_to_settings_Fragment"
             app:destination="@id/settings_Fragment" />
@@ -27,49 +38,7 @@
         <action
             android:id="@+id/action_pill_List_Fragment_to_change_Pills_Fragment"
             app:destination="@id/change_Pills_Fragment" />
-        <action
-            android:id="@+id/action_pill_List_Fragment_to_chart_Fragment"
-            app:destination="@id/chart_Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/protocolFragment"
-        android:name="com.example.pill_aider.protocolFragment"
-        android:label="fragment_protocol"
-        tools:layout="@layout/fragment_protocol" >
-        <action
-            android:id="@+id/action_protocolFragment_to_pill_List_Fragment2"
-            app:destination="@id/pill_List_Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/settings_Fragment"
-        android:name="com.example.pill_aider.Settings_Fragment"
-        android:label="fragment_settings_"
-        tools:layout="@layout/fragment_settings_" >
-        <action
-            android:id="@+id/action_settings_Fragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
-        <action
-            android:id="@+id/action_settings_Fragment_to_developer_Fragment"
-            app:destination="@id/developer_Fragment" />
-        <action
-            android:id="@+id/action_settings_Fragment_to_chart_Fragment"
-            app:destination="@id/chart_Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/developer_Fragment"
-        android:name="com.example.pill_aider.Developer_Fragment"
-        android:label="fragment_developer_"
-        tools:layout="@layout/fragment_developer_" />
-    <fragment
-        android:id="@+id/add_Pills_Fragment"
-        android:name="com.example.pill_aider.Add_Pills_Fragment"
-        android:label="fragment_add__pills_"
-        tools:layout="@layout/fragment_add__pills_" />
-    <fragment
-        android:id="@+id/change_Pills_Fragment"
-        android:name="com.example.pill_aider.Change_Pills_Fragment"
-        android:label="fragment_change__pills_"
-        tools:layout="@layout/fragment_change__pills_" />
     <fragment
         android:id="@+id/chart_Fragment"
         android:name="com.example.pill_aider.Chart_Fragment"
@@ -80,6 +49,51 @@
             app:destination="@id/pill_List_Fragment" />
         <action
             android:id="@+id/action_chart_Fragment_to_settings_Fragment"
+            app:destination="@id/settings_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings_Fragment"
+        android:name="com.example.pill_aider.Settings_Fragment"
+        android:label="fragment_settings_"
+        tools:layout="@layout/fragment_settings_" >
+        <action
+            android:id="@+id/action_settings_Fragment_to_pill_List_Fragment"
+            app:destination="@id/pill_List_Fragment" />
+        <action
+            android:id="@+id/action_settings_Fragment_to_chart_Fragment"
+            app:destination="@id/chart_Fragment" />
+        <action
+            android:id="@+id/action_settings_Fragment_to_developer_Fragment"
+            app:destination="@id/developer_Fragment" />
+        <action
+            android:id="@+id/action_settings_Fragment_to_protocolFragment"
+            app:destination="@id/protocolFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Pills_Fragment"
+        android:name="com.example.pill_aider.Add_Pills_Fragment"
+        android:label="fragment_add__pills_"
+        tools:layout="@layout/fragment_add__pills_" >
+        <action
+            android:id="@+id/action_add_Pills_Fragment_to_pill_List_Fragment"
+            app:destination="@id/pill_List_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/change_Pills_Fragment"
+        android:name="com.example.pill_aider.Change_Pills_Fragment"
+        android:label="fragment_change__pills_"
+        tools:layout="@layout/fragment_change__pills_" >
+        <action
+            android:id="@+id/action_change_Pills_Fragment_to_pill_List_Fragment"
+            app:destination="@id/pill_List_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/developer_Fragment"
+        android:name="com.example.pill_aider.Developer_Fragment"
+        android:label="fragment_developer_"
+        tools:layout="@layout/fragment_developer_" >
+        <action
+            android:id="@+id/action_developer_Fragment_to_settings_Fragment"
             app:destination="@id/settings_Fragment" />
     </fragment>
 </navigation>
