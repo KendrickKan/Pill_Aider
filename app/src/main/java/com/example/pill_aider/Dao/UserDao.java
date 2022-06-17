@@ -14,13 +14,13 @@ import java.util.List;
 @Dao
 public interface UserDao {
     @Insert
-    void insertUser(User user);
+    void insertUser(User... users);
 
     @Update
-    void updateUser(User user);
+    void updateUser(User... users);
 
     @Delete
-    void deleteUser(User user);
+    void deleteUser(User... users);
 
     @Query("SELECT * FROM USER")
     LiveData<List<User>> getAllUsers();

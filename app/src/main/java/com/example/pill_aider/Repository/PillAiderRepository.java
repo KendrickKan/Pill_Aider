@@ -67,7 +67,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(User... users) {
-            userDao.insertUser(users[0]);
+            userDao.insertUser(users);
             return null;
         }
     }
@@ -80,7 +80,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(User... users) {
-            userDao.updateUser(users[0]);
+            userDao.updateUser(users);
             return null;
         }
     }
@@ -93,7 +93,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(User... users) {
-            userDao.deleteUser(users[0]);
+            userDao.deleteUser(users);
             return null;
         }
     }
@@ -106,7 +106,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(Reminder... reminders) {
-            reminderDao.insertReminder(reminders[0]);
+            reminderDao.insertReminder(reminders);
             return null;
         }
     }
@@ -118,7 +118,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(Reminder... reminders) {
-            reminderDao.updateReminder(reminders[0]);
+            reminderDao.updateReminder(reminders);
             return null;
         }
     }
@@ -131,7 +131,7 @@ public class PillAiderRepository {
         }
         @Override
         protected Void doInBackground(Reminder... reminders) {
-            reminderDao.deleteReminder(reminders[0]);
+            reminderDao.deleteReminder(reminders);
             return null;
         }
     }

@@ -15,14 +15,14 @@ import java.util.List;
 @Dao
 public interface ReminderDao {
     @Insert
-    void insertReminder(Reminder reminder);
+    void insertReminder(Reminder... reminders);
 
     @Update
-    void updateReminder(Reminder reminder);
+    void updateReminder(Reminder... reminders);
 
     @Delete
-    void deleteReminder(Reminder reminder);
+    void deleteReminder(Reminder... reminders);
 
-    @Query("SELECT * FROM Reminder")
+    @Query("SELECT * FROM REMINDER")
     LiveData<List<Reminder>> getAllReminders();
 }

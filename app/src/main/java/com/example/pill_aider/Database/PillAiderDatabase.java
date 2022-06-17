@@ -11,13 +11,14 @@ import com.example.pill_aider.Dao.UserDao;
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.User;
 
-@Database(entities = {User.class, Reminder.class},version = 1,exportSchema = false)
+@Database(entities = {User.class, Reminder.class},version = 2,exportSchema = false)
 public abstract class PillAiderDatabase extends RoomDatabase {
     private static PillAiderDatabase INSTANCE;
     //单例
     public static synchronized PillAiderDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),PillAiderDatabase.class,"pill_aider_database")
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return INSTANCE;
