@@ -1,12 +1,20 @@
 package com.example.pill_aider;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.pill_aider.Entity.PillAiderFunction;
+import com.example.pill_aider.Entity.User;
+import com.example.pill_aider.ViewModel.UserViewModel;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,12 +61,62 @@ public class Settings_Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        EditText bhour, bmin, lhour, lmin, dhour, dmin, rtimes, rinter;
+
     }
 
+    private View root;
+    private EditText bhour, bmin, lhour, lmin, dhour, dmin, rtimes, rinter;
+//    UserDao users;
+    User user;
+    UserViewModel userViewModel;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        if(root == null){
+            root = inflater.inflate(R.layout.fragment_settings_,container,false);
+        }
+        bhour = root.findViewById(R.id.bhour);
+        bmin = root.findViewById(R.id.bmin);
+        lhour = root.findViewById(R.id.lhour);
+        lmin = root.findViewById(R.id.lmin);
+        dhour = root.findViewById(R.id.dhour);
+        dmin = root.findViewById(R.id.dmin);
+        rtimes = root.findViewById(R.id.dhour2);
+        rinter = root.findViewById(R.id.dhour4);
+
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.getAllUsersLive().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                StringBuilder text = new StringBuilder();
+//                for(int i=0;i<users.size();i++) {
+                    user = users.get(users.size()-1);
+                    bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+                    bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+                    lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+                    lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+                    dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+                    dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+                    rtimes.setText(String.valueOf(user.getRem_num()));
+                    rinter.setText(String.valueOf(user.getBre_time()));
+//                }
+            }
+        });
+
+        return root;
+
+//        UserViewModel userviewmodel;
+//        userviewmodel = new ViewModelProvider(this).get(UserViewModel.class);
+//        FragmentSettingsBinding binding;
+//        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_settings_,container,false);
+//        binding.setData(userviewmodel);
+//        binding.setLifecycleOwner(this);
+
+//        return binding.getRoot();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings_, container, false);
+        //return inflater.inflate(R.layout.fragment_settings_, container, false);
     }
 }

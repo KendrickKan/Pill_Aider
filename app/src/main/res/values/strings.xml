@@ -5,6 +5,25 @@
     <string name="guide_setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_enter">Enter</string>
+    <string name="set_time_title">Time to meal</string>
+    <string name="set_time_b">Breakfast</string>
+    <string name="set_time_l">Lunch</string>
+    <string name="set_time_d">Dinner</string>
+    <string name="set_time_hour">Hour</string>
+    <string name="set_time_min">Min</string>
+    <string name="set_time_null">Select</string>
+    <string name="set_remind">Reminder</string>
+    <string name="set_remind1">One pill remind</string>
+    <string name="set_remind2">times</string>
+    <string name="set_remind3">with interval of</string>
+    <string name="set_remind4">minites</string>
+    <string name="begin_title">Pill Aider</string>
+    <string name="begin_enter">Enter</string>
+    <string name="set_info">Developer Information</string>
+    <string name="set_private">Privacy Policy</string>
+    <string name="inf_developer">Developers</string>
+    <string name="detail_info">919106840132 李洲诚  919106840420 阚东 919106840421 李广通（Leader） 919106840424 柳翰坤 919106840425 吕辉</string>
     <string name="button_Enter">Enter</string>
     <string name="protocal">Disclaimer</string>
     <string name="protocal_maintain">Because the prescription of narcotic drugs and emergency prescription may contain addictive drugs or the requirements for timeliness and professionalism are too high, the software refuses to handle them. According to the prescription management measures issued by the former Ministry of health and the State Administration of traditional Chinese medicine, the prescription picture recognition function of this software will not recognize the anesthetic prescriptions with light red background and the emergency prescriptions with light yellow background. Please understand. The software and its development team are not responsible for any medical problems caused by prescription identification, medication reminder and other functions. If you have any questions about prescription medication, please contact the medical staff at the first time. Prescription medication shall be subject to the guidance of medical staff.</string>

@@ -8,25 +8,18 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.ReportViewModel;
 import com.example.pill_aider.ViewModel.UserViewModel;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.example.pill_aider.databinding.ActivityMainBinding;
 
 import java.util.List;
@@ -83,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupWithNavController(binding.navView, navController);
 
         //KD Test
-        User user = new User("10","20","30",5,1);
+        User user = new User("10:10","15:30","19:30",5,1);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.insertUser(user);
         userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
