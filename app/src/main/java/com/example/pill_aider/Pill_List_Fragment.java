@@ -64,12 +64,30 @@ public class Pill_List_Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         View imagebutton= getView().findViewById(R.id.imageButton2);//需要设透明的控件的id
+        View imagebutton2 =getView().findViewById(R.id.imageButton);
+        View imagebutton3 =getView().findViewById(R.id.imageButton6);
+        imagebutton2.getBackground().setAlpha(0);
+        imagebutton3.getBackground().setAlpha(0);
         imagebutton.getBackground().setAlpha(0);       //0~255透明度值
+        imagebutton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                controller.navigate(R.id.action_pill_List_Fragment_to_chart_Fragment);
+            }
+        });
         imagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavController controller = Navigation.findNavController(v);
                 controller.navigate(R.id.action_pill_List_Fragment_to_add_Pills_Fragment);
+            }
+        });
+        imagebutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                controller.navigate(R.id.action_pill_List_Fragment_to_settings_Fragment);
             }
         });
     }

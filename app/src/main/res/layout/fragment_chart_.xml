@@ -12,12 +12,13 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="TextView"
+        android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_report_info"
-        app:layout_constraintTop_toTopOf="@+id/iv_report_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_report_info"
         app:layout_constraintVertical_bias="0.2"
         tools:text="@string/chart_value_default" />
 
@@ -46,13 +47,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/chart_unit"
-    app:layout_constraintStart_toEndOf="@id/textView"
-    app:layout_constraintBottom_toBottomOf="@id/textView"
-    android:layout_marginBottom="12dp"
-    android:layout_marginStart="8dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/chart_unit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/textView"
+        app:layout_constraintStart_toEndOf="@id/textView" />
 
 
     <ImageView

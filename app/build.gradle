@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdk 32
-    dataBinding{          // 添加dataBanding分离数据进行双向绑定，减少控件和事件绑定的任务量
+    dataBinding {          // 添加dataBanding分离数据进行双向绑定，减少控件和事件绑定的任务量
         enabled true
     }
     defaultConfig {

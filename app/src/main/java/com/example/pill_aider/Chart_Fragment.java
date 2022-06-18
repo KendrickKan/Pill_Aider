@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -141,6 +142,7 @@ public class Chart_Fragment extends Fragment {
         totalLine = new LineDataSet(new ArrayList<>(), getContext().getString(R.string.chart_line_label_total));
         tokenLine = new LineDataSet(new ArrayList<>(), getContext().getString(R.string.chart_line_label_token));
         lineData = new LineData();
+        list = new ArrayList<>();
 
         RefreshData();
         setTotalLineStyle();
@@ -156,7 +158,22 @@ public class Chart_Fragment extends Fragment {
      * @description 更新数据
      */
     private void RefreshData() {
-        List<Report> originalList = reportViewModel.getAllReportsLive().getValue();
+        List<Report> originalList = new ArrayList<>();
+        originalList.add(new Report("1",1,2));
+        originalList.add(new Report("2",2,1));
+        originalList.add(new Report("3",3,3));
+        originalList.add(new Report("4",1,4));
+        originalList.add(new Report("5",6,2));
+        originalList.add(new Report("6",1,2));
+        originalList.add(new Report("1",1,2));
+        originalList.add(new Report("2",2,1));
+        originalList.add(new Report("3",3,3));
+        originalList.add(new Report("4",1,4));
+        originalList.add(new Report("5",6,2));
+        originalList.add(new Report("6",1,2));
+
+        if(originalList == null)
+            Log.d("debug","数据为空");
         List<Entry> total = new ArrayList<>();//总次数
         List<Entry> token = new ArrayList<>();//已服用次数
 
@@ -270,8 +287,8 @@ public class Chart_Fragment extends Fragment {
     private void setYAxisStyle(){
         YAxis yAxis = binding.linechart.getAxisLeft();
         //控制y轴最大最小范围, 避免因为使用了曲线而导致的折线截断
-        yAxis.setAxisMinimum(-100);
-        yAxis.setAxisMaximum(2000);
+        yAxis.setAxisMinimum(0);
+        yAxis.setAxisMaximum(10);
 
         //关闭两侧y轴显示
         binding.linechart.getAxisRight().setEnabled(false);
@@ -343,7 +360,7 @@ public class Chart_Fragment extends Fragment {
         });
 
         //设置出现动画
-        binding.linechart.animateY(1500);
+        binding.linechart.animateY(750);
     }
 
     /**
