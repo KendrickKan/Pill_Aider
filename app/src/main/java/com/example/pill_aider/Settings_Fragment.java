@@ -7,9 +7,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.pill_aider.Entity.PillAiderFunction;
 import com.example.pill_aider.Entity.User;
@@ -73,6 +77,28 @@ public class Settings_Fragment extends Fragment {
     User user = new User("0:0","0:0","0:0",0,0);
     UserViewModel userViewModel;
     Button saveButton;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button button_l3 ,button_l4;
+        button_l3 =getView().findViewById(R.id.button3);
+        button_l4 =getView().findViewById(R.id.button4);
+        button_l3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                controller.navigate(R.id.action_settings_Fragment_to_developer_Fragment);
+            }
+        });
+        button_l4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                controller.navigate(R.id.action_settings_Fragment_to_protocolFragment);
+            }
+        });
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
