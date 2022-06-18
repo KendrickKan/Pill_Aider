@@ -22,4 +22,9 @@
     <string name="tittle_Usage">用法用量</string>
     <string name="tittle_B_I_A_usage">餐前/随餐/餐后用药</string>
     <string name="tittle_remind_method">提醒方式</string>
+    <string name="chart_value_default">---</string>
+    <string name="chart_button_refresh">刷新</string>
+    <string name="chart_line_label_total">总次数</string>
+    <string name="chart_line_label_token">已服用次数</string>
+    <string name="chart_unit">次</string>
 </resources>
