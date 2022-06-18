@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityCollector.activities.add(this);    // protocol 点按退出（联合 activitycollector
         //实现沉浸式状态栏
         setStatusBar();
 //        NavController controller = Navigation.findNavController(this,R.id.fragmentContainerView);

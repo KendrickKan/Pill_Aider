@@ -11,4 +11,15 @@
         本软件及其开发团队不对任何由处方识别、服药提醒等功能导致的医疗问题负责。若对处方用药有疑问，请您第一时间联系医护人员。处方用药请以医护人员指导为准。</string>
     <string name="button_protocal_QUIT">拒绝</string>
     <string name="button_protocal_ACCEPT">同意</string>
+    <string name="pill_list">我的药单</string>
+    <string name="add_pills_adder">新增处方</string>
+    <string name="change_pills_tittle">修改处方</string>
+    <string name="add_pill_reset">重置</string>
+    <string name="add_pills_confirm">添加</string>
+    <string name="change_pills_quit">放弃</string>
+    <string name="change_pills_Confirm">更改</string>
+    <string name="tittle_name">药品名称</string>
+    <string name="tittle_Usage">用法用量</string>
+    <string name="tittle_B_I_A_usage">餐前/随餐/餐后用药</string>
+    <string name="tittle_remind_method">提醒方式</string>
 </resources>
