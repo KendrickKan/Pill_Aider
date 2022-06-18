@@ -23,6 +23,10 @@ public class UserViewModel extends AndroidViewModel {
         return pillAiderRepository.getAllUsersLive();
     }
 
+    public List<User> getAllUsers(){
+        return pillAiderRepository.getAllUsers();
+    }
+
     public void insertUser(User... users) {
         pillAiderRepository.insertUser(users);
     }

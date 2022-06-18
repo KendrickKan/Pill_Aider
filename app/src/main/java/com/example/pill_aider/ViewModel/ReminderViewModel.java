@@ -21,6 +21,10 @@ public class ReminderViewModel extends AndroidViewModel {
         return pillAiderRepository.getAllRemindersLive();
     }
 
+    public List<Reminder> getAllReminders(){
+        return pillAiderRepository.getAllReminders();
+    }
+
     public void insertReminder(Reminder... reminders) {
         pillAiderRepository.insertReminder(reminders);
     }

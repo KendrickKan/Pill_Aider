@@ -17,8 +17,11 @@ import java.util.List;
 
 public class PillAiderRepository {
     private LiveData<List<User>> allUsersLive;
+    private List<User> allUsers;
     private LiveData<List<Reminder>> allRemindersLive;
+    private List<Reminder> allReminders;
     private LiveData<List<Report>> allReportsLive;
+    private List<Report> allReports;
     private UserDao userDao;
     private ReminderDao reminderDao;
     private ReportDao reportDao;
@@ -28,8 +31,11 @@ public class PillAiderRepository {
         userDao = pillAiderDatabase.getUserDao();
         reminderDao = pillAiderDatabase.getReminderDao();
         reportDao=pillAiderDatabase.getReportDao();
+        allUsers = userDao.getAllUsersNotLiveData();
         allUsersLive = userDao.getAllUsers();
+        allReminders = reminderDao.getAllRemindersNotLiveData();
         allRemindersLive = reminderDao.getAllReminders();
+        allReports = reportDao.getAllReportsNotLiveData();
         allReportsLive=reportDao.getAllReports();
     }
 
@@ -45,6 +51,9 @@ public class PillAiderRepository {
         new DeleteAsyncTask(userDao).execute(users);
     }
 
+    public List<User> getAllUsers() {
+        return allUsers;
+    }
     public LiveData<List<User>> getAllUsersLive() {
         return allUsersLive;
     }
@@ -61,6 +70,9 @@ public class PillAiderRepository {
         new DeleteAsyncTasks(reminderDao).execute(reminders);
     }
 
+    public List<Reminder> getAllReminders(){
+        return allReminders;
+    }
     public LiveData<List<Reminder>> getAllRemindersLive(){
         return allRemindersLive;
     }
@@ -77,10 +89,12 @@ public class PillAiderRepository {
         new DeleteAsyncTaskss(reportDao).execute(reports);
     }
 
+    public List<Report> getAllReports(){
+        return allReports;
+    }
     public LiveData<List<Report>> getAllReportsLive(){
         return allReportsLive;
     }
-
 
 
 

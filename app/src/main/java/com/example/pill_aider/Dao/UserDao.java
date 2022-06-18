@@ -24,4 +24,7 @@ public interface UserDao {
 
     @Query("SELECT * FROM USER")
     LiveData<List<User>> getAllUsers();
+
+    @Query("SELECT * FROM USER")
+    List<User> getAllUsersNotLiveData();
 }

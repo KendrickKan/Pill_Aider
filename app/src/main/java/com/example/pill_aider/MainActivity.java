@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
             decorView.setSystemUiVisibility(option);
             //根据上面设置是否对状态栏单独设置颜色
-                getWindow().setStatusBarColor(Color.TRANSPARENT);//透明
+            getWindow().setStatusBarColor(Color.TRANSPARENT);//透明
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//4.4到5.0
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
@@ -75,28 +75,36 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 //        NavigationUI.setupWithNavController(binding.navView, navController);
 
-        //KD Test
-        //User user = new User("10:10","15:30","19:30",5,1);
+//        //KD Test
+//        //User user = new User("10:10","15:30","19:30",5,1);
+//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        //userViewModel.insertUser(user);
+//        userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
+//            @Override
+//            public void onChanged(List<User> users) {
+//                StringBuilder text = new StringBuilder();
+//                for(int i=0;i<users.size();i++) {
+//                    User user = users.get(i);
+//                    Log.d(TAG, String.valueOf(user.getId()));
+//                }
+//            }
+//        });
+
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        //userViewModel.insertUser(user);
-        userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-                StringBuilder text = new StringBuilder();
-                for(int i=0;i<users.size();i++) {
-                    User user = users.get(i);
-                    Log.d(TAG, String.valueOf(user.getId()));
-                }
-            }
-        });
-
-        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");
-        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
-        reminderViewModel.insertReminder(reminder);
-
-        Report report=new Report("2020-06-27",3,3);
-        reportViewModel =new ViewModelProvider(this).get(ReportViewModel.class);
-        reportViewModel.insertReport(report);
+        List<User> users = userViewModel.getAllUsers();
+        for(int i = 0;i<users.size();i++){
+            userViewModel.deleteUser(users.get(i));
+        }
+        User user = new User("10:01","15:20","21:21",5,5);
+        userViewModel.insertUser(user);
+//
+//        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");
+//        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+//        reminderViewModel.insertReminder(reminder);
+//
+//        Report report=new Report("2020-06-27",3,3);
+//        reportViewModel =new ViewModelProvider(this).get(ReportViewModel.class);
+//        reportViewModel.insertReport(report);
 
     }
     @Override

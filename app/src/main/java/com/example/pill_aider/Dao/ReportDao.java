@@ -25,4 +25,7 @@ public interface ReportDao {
 
     @Query("SELECT * FROM Report")
     LiveData<List<Report>> getAllReports();
+
+    @Query("SELECT * FROM Report")
+    List<Report> getAllReportsNotLiveData();
 }

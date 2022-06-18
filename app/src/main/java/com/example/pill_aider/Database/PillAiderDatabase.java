@@ -20,6 +20,7 @@ public abstract class PillAiderDatabase extends RoomDatabase {
     public static synchronized PillAiderDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),PillAiderDatabase.class,"pill_aider_database")
+                    .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build();
         }
