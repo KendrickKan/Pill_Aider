@@ -7,16 +7,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_enter">Enter</string>
     <string name="set_time_title">Time to meal</string>
-    <string name="set_time_b">Breakfast</string>
-    <string name="set_time_l">Lunch</string>
-    <string name="set_time_d">Dinner</string>
+    <string name="set_time_b">Breakfast :</string>
+    <string name="set_time_l">Lunch :</string>
+    <string name="set_time_d">Dinner :</string>
     <string name="set_time_hour">Hour</string>
     <string name="set_time_min">Min</string>
     <string name="set_time_null">Select</string>
-    <string name="set_remind">Reminder</string>
+    <string name="set_remind">Reminder settings</string>
     <string name="set_remind1">One pill remind</string>
     <string name="set_remind2">times</string>
-    <string name="set_remind3">with interval of</string>
+    <string name="set_remind3">With interval of</string>
     <string name="set_remind4">minites</string>
     <string name="begin_title">Pill Aider</string>
     <string name="begin_enter">Enter</string>
@@ -53,4 +53,12 @@
     <string name="usage_each_time">each time</string>
     <string name="toast_freset">Your input has been reseted</string>
     <string name="set_save">SAVE</string>
+    <string name="developer_tittle">Develop infomation</string>
+    <string name="developer_sdk">SDK version</string>
+    <string name="developer_device">Device</string>
+    <string name="developer_gradle">Gradle version</string>
+    <string name="developer_developer">Developer</string>
+    <string name="developer_people">Guangtong Li,Dong Kan,Zhoucheng Li,Hui Lv,Hankun Liu</string>
+    <string name="Settings_tittle">Settings</string>
+    <string name="chart_tittle">Health daily</string>
 </resources>

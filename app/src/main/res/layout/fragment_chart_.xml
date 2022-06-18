@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Chart_Fragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline103"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/chart_tittle"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,23 +44,6 @@
         app:layout_constraintTop_toTopOf="@+id/iv_report_info"
         app:layout_constraintVertical_bias="0.2"
         tools:text="@string/chart_value_default" />
-
-    <Button
-        android:id="@+id/button_fresh"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="@drawable/button_shape"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/chart_button_refresh"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linechart"
-        app:layout_constraintVertical_bias="0.519" />
 
     <com.example.pill_aider.widget.MyLineChart
         android:id="@+id/linechart"
@@ -60,6 +66,23 @@
         app:layout_constraintStart_toEndOf="@id/textView" />
 
 
+    <Button
+        android:id="@+id/button_fresh"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_shape"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/chart_button_refresh"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline104"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="@+id/guideline105"
+        app:layout_constraintTop_toBottomOf="@+id/linechart"
+        app:layout_constraintVertical_bias="0.519" />
+
     <ImageView
         android:id="@+id/iv_report_info"
         android:layout_width="match_parent"
@@ -68,6 +91,21 @@
         android:src="@drawable/bg_report_line"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline104"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline105"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.62" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

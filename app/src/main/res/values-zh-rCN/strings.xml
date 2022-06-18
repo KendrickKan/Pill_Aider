@@ -7,9 +7,9 @@
     <string name="button_enter">开始</string>
     <string name="hello_blank_fragment">ss</string>
     <string name="set_time_title">用餐时间</string>
-    <string name="set_time_b">早餐</string>
-    <string name="set_time_l">午餐</string>
-    <string name="set_time_d">晚餐</string>
+    <string name="set_time_b">早餐 :</string>
+    <string name="set_time_l">午餐 :</string>
+    <string name="set_time_d">晚餐 :</string>
     <string name="set_time_hour">时</string>
     <string name="set_time_min">分</string>
     <string name="set_time_null">请选择</string>
@@ -54,4 +54,12 @@
     <string name="usage_times">次</string>
     <string name="usage_each_time">每次</string>
     <string name="toast_freset">输入已被重置</string>
+    <string name="developer_tittle">开发信息</string>
+    <string name="developer_sdk">SDK 版本号</string>
+    <string name="developer_device">测试设备</string>
+    <string name="developer_gradle">Gradle 版本号</string>
+    <string name="developer_developer">开发人员</string>
+    <string name="developer_people">李广通,阚东,李洲诚,吕辉,柳翰坤</string>
+    <string name="Settings_tittle">个性化设置</string>
+    <string name="chart_tittle">健康日报</string>
 </resources>
