@@ -1,12 +1,22 @@
 package com.example.pill_aider;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +63,39 @@ public class Add_Pills_Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button button_5,button_4;
+        button_5 = getView().findViewById(R.id.button5);
+        button_4 = getView().findViewById(R.id.button4);
+        button_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                //添加药品信息并进行数据绑定
+                controller.navigate(R.id.action_add_Pills_Fragment_to_pill_List_Fragment);
+            }
+        });
+        button_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //进行表单重置
+                //test
+                Toast toast = Toast.makeText(getActivity(), getContext().getString(R.string.toast_freset), Toast.LENGTH_LONG);//实例化toast对象
+                //位置设定
+//                toast.setGravity(Gravity.CENTER, -20, 0);
+//                LinearLayout toast_layout = (LinearLayout) toast.getView();
+//                ImageView imageView = new ImageView(getActivity());
+//                imageView.setBackgroundResource(R.drawable.pill_list_add_button);
+//                AnimationDrawable background = (AnimationDrawable) imageView.getBackground();
+//                background.start();
+//                toast_layout.addView(imageView, 0);
+                toast.show();
+            }
+        });
     }
 
     @Override

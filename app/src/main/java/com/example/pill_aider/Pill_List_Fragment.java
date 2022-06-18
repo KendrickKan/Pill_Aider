@@ -7,11 +7,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.pill_aider.ViewModel.ReminderViewModel;
+import com.example.pill_aider.ViewModel.UserViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +28,11 @@ public class Pill_List_Fragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    // 用于表单
+    private ReminderViewModel reminderViewModel;
+    private UserViewModel userViewModel;
+    private RecyclerView recyclerView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -63,6 +72,7 @@ public class Pill_List_Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        recyclerView = getView().findViewById(R.id.recyclerview);
         View imagebutton= getView().findViewById(R.id.imageButton2);//需要设透明的控件的id
         View imagebutton2 =getView().findViewById(R.id.imageButton);
         View imagebutton3 =getView().findViewById(R.id.imageButton6);

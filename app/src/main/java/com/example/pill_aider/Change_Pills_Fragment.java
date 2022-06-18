@@ -1,12 +1,21 @@
 package com.example.pill_aider;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +62,30 @@ public class Change_Pills_Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button button_8,button_9; // 8放弃更改并退回到药单 9保存更改并返回药单
+        button_8 = getView().findViewById(R.id.button8);
+        button_9 = getView().findViewById(R.id.button9);
+        button_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                //不做任何数据更新
+                Toast toast = Toast.makeText(getActivity().getApplicationContext(), "带图片显示", Toast.LENGTH_LONG);//实例化toast对象
+                LinearLayout toast_layout = (LinearLayout) toast.getView();
+                ImageView imageView = new ImageView(getActivity().getApplicationContext());
+                imageView.setBackgroundResource(R.drawable.beginer);
+                AnimationDrawable background = (AnimationDrawable) imageView.getBackground();
+                background.start();
+                toast_layout.addView(imageView, 0);
+                toast.show();
+                controller.navigate(R.id.action_change_Pills_Fragment_to_pill_List_Fragment);
+            }
+        });
     }
 
     @Override

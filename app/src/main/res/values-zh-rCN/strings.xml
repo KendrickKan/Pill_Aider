@@ -47,4 +47,11 @@
     <string name="chart_line_label_token">已服用次数</string>
     <string name="chart_unit">次</string>
     <string name="set_save">保存</string>
+    <string name="tittle_cautions">注意事项</string>
+    <string name="reminder_type_to_input">输入药品名称</string>
+    <string name="reminder_type_to_input2">自定义用药禁忌</string>
+    <string name="usage_each_day">每日</string>
+    <string name="usage_times">次</string>
+    <string name="usage_each_time">每次</string>
+    <string name="toast_freset">输入已被重置</string>
 </resources>

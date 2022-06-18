@@ -37,7 +37,7 @@
     <string name="change_pills_quit">Quit</string>
     <string name="change_pills_Confirm">Confirm</string>
     <string name="tittle_name">Name</string>
-    <string name="tittle_Usage">usage</string>
+    <string name="tittle_Usage">Usage</string>
     <string name="tittle_B_I_A_usage">Befor/with/after meal</string>
     <string name="tittle_remind_method">Remind method</string>
     <string name="chart_value_default">---</string>
@@ -45,5 +45,12 @@
     <string name="chart_line_label_total">total</string>
     <string name="chart_line_label_token">token</string>
     <string name="chart_unit">time</string>
+    <string name="tittle_cautions">Cautions</string>
+    <string name="reminder_type_to_input">type to input</string>
+    <string name="reminder_type_to_input2">type to input</string>
+    <string name="usage_each_day">each day</string>
+    <string name="usage_times">times</string>
+    <string name="usage_each_time">each time</string>
+    <string name="toast_freset">Your input has been reseted</string>
     <string name="set_save">SAVE</string>
 </resources>
