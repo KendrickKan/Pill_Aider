@@ -12,16 +12,14 @@
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/guid_bottom_visible_chart_30.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button_30.xml" value="0.1" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button_55.xml" value="0.1505" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_chart_button_60.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_setting_button_60.xml" value="0.1" />
-        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/set_border.xml" value="0.1" />
-        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button_55.xml" value="0.1505" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/set_border.xml" value="0.1205" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/set_small_border.xml" value="0.1495" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_add__pills_.xml" value="0.15208333333333332" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_begin.xml" value="0.25181159420289856" />
-        <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_change__pills_.xml" value="0.4" />
-        <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_chart_.xml" value="0.264" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_change__pills_.xml" value="0.15208333333333332" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_chart_.xml" value="0.11543394613082514" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_dashboard.xml" value="0.14990942028985507" />
@@ -30,7 +28,7 @@
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_notifications.xml" value="0.14990942028985507" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_pill__list_.xml" value="0.15208333333333332" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_protocol.xml" value="0.25" />
-        <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_settings_.xml" value="0.20478837109876016" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_settings_.xml" value="0.4" />
       </map>
     </option>
   </component>

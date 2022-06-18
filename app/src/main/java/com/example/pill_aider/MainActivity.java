@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupWithNavController(binding.navView, navController);
 
         //KD Test
-        User user = new User("10:10","15:30","19:30",5,1);
+        //User user = new User("10:10","15:30","19:30",5,1);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        userViewModel.insertUser(user);
+        //userViewModel.insertUser(user);
         userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
@@ -123,5 +123,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.getAllUsersLive().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                for(int i=0;i<users.size();i++) {
+                    User user = users.get(i);
+                    userViewModel.deleteUser(user);
+                }
+            }
+        });
     }
 }

@@ -45,4 +45,5 @@
     <string name="chart_line_label_total">total</string>
     <string name="chart_line_label_token">token</string>
     <string name="chart_unit">time</string>
+    <string name="set_save">SAVE</string>
 </resources>
