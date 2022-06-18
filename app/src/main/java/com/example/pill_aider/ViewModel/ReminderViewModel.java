@@ -17,7 +17,7 @@ public class ReminderViewModel extends AndroidViewModel {
         super(application);
         pillAiderRepository = new PillAiderRepository(application);
     }
-    LiveData<List<Reminder>> getAllRemindersLive(){
+    public LiveData<List<Reminder>> getAllRemindersLive(){
         return pillAiderRepository.getAllRemindersLive();
     }
 

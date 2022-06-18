@@ -19,7 +19,7 @@ public class ReportViewModel extends AndroidViewModel {
         pillAiderRepository = new PillAiderRepository(application);
     }
 
-    LiveData<List<Report>> getAllReportsLive(){
+    public LiveData<List<Report>> getAllReportsLive(){
         return pillAiderRepository.getAllReportsLive();
     }
 
@@ -32,4 +32,5 @@ public class ReportViewModel extends AndroidViewModel {
     public void deleteReport(Report... reports) {
         pillAiderRepository.deleteReport(reports);
     }
+
 }
