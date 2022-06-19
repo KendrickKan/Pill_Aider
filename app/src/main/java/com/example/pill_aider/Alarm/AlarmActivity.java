@@ -1,11 +1,10 @@
 package com.example.pill_aider.Alarm;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.util.Log;
 
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.User;
@@ -14,6 +13,8 @@ import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.UserViewModel;
 
 public class AlarmActivity extends AppCompatActivity {
+
+    private TextView item_name, num_day, dasage_per_time, item_type, item_time, item_rem, notice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,20 @@ public class AlarmActivity extends AppCompatActivity {
         ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
         Reminder reminder = reminderViewModel.getReminderByID(reminderId);
 
+        item_name = findViewById(R.id.textView67);
+        num_day = findViewById(R.id.textView66);
+        dasage_per_time = findViewById(R.id.textView64);
+        item_type = findViewById(R.id.textView65);
+        item_time = findViewById(R.id.textView69);
+        item_rem = findViewById(R.id.textView61);
+        notice = findViewById(R.id.textView63);
 
+        item_name.setText(reminder.getItem_name());
+        num_day.setText(reminder.getNum_day());
+        dasage_per_time.setText(reminder.getDasage_per_time());
+        item_type.setText(reminder.getItem_type());
+        item_time.setText(reminder.getItem_time());
+        item_rem.setText(reminder.getItem_rem());
+        notice.setText(reminder.getNotice());
     }
 }

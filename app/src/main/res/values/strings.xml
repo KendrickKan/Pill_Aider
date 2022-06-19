@@ -85,4 +85,5 @@
     <string name="quit_change">\'s change has been cancelled</string>
     <string name="toast_have_not_changed">The infomation has\'t been changed</string>
     <string name="toast_change_succeed">has been changed successfully</string>
+    <string name="noti_title">您设定的吃药时间到了。</string>
 </resources>

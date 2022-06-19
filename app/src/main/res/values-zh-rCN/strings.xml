@@ -84,4 +84,5 @@
     <string name="quit_change">" 的更改已被取消"</string>
     <string name="toast_have_not_changed">该提醒事项未作出更改</string>
     <string name="toast_change_succeed">" 的提醒事项更改成功"</string>
+    <string name="noti_title">Time to take medicine now.</string>
 </resources>
