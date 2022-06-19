@@ -1,5 +1,6 @@
 package com.example.pill_aider;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,12 +37,19 @@ public class CollectRecycleAdapter extends RecyclerView.Adapter<CollectRecycleAd
         return new myViewHodler(itemView);
     }
 
+//    private Resources getResources() {
+//        Resources mResources = null;
+//        mResources = getResources();
+//        return mResources;
+//    }
+
     /**
      * 绑定数据，数据与view绑定
      *
      * @param holder
      * @param position
      */
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(myViewHodler holder, int position) {
         //根据点击位置绑定数据
@@ -51,31 +59,76 @@ public class CollectRecycleAdapter extends RecyclerView.Adapter<CollectRecycleAd
         holder.num_day.setText(String.valueOf(data.getNum_day()));
         holder.dasage_per_time.setText(String.valueOf(data.getDasage_per_time()));
         if(data.getItem_type()==1){
-            holder.item_type.setText("片");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_type.setText("片");
+            }
+            else{
+                holder.item_type.setText("pieces");
+            }
         }
         else if(data.getItem_type()==2){
-            holder.item_type.setText("粒");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_type.setText("粒");
+            }
+            else{
+                holder.item_type.setText("grain");
+            }
         }
         else{
-            holder.item_type.setText("毫升");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_type.setText("毫升");
+            }
+            else{
+                holder.item_type.setText("ml");
+            }
         }
         if(data.getItem_time()==1){
-            holder.item_time.setText("饭前服用");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_time.setText("饭前服用");
+            }
+            else{
+                holder.item_time.setText("Before Meal");
+            }
         }
         else if(data.getItem_time()==2){
-            holder.item_time.setText("饭中服用");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_time.setText("随饭服用");
+            }
+            else{
+                holder.item_time.setText("With Meal");
+            }
         }
         else{
-            holder.item_time.setText("饭后服用");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")){
+                holder.item_time.setText("饭后服用");
+            }
+            else{
+                holder.item_time.setText("After Meal");
+            }
         }
         if(data.getItem_rem()==1){
-            holder.item_rem.setText("响铃");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")) {
+                holder.item_rem.setText("响铃");
+            }
+            else{
+                holder.item_rem.setText("Ring");
+            }
         }
         else if(data.getItem_rem()==2){
-            holder.item_rem.setText("振动");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")) {
+                holder.item_rem.setText("振动");
+            }
+            else{
+                holder.item_rem.setText("Vibrate");
+            }
         }
         else{
-            holder.item_rem.setText("响铃并振动");
+            if(context.getResources().getConfiguration().locale.getCountry().equals("CN")) {
+                holder.item_rem.setText("响铃并振动");
+            }
+            else{
+                holder.item_rem.setText("Ring and Vibrate");
+            }
         }
         holder.notice.setText(data.getNotice());
     }
