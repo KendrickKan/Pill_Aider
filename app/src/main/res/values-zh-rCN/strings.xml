@@ -77,12 +77,13 @@
     <string name="widget_every_day">今天还需</string>
     <string name="widget_times_left">次</string>
     <string name="widget_take_medecine">距离下次服药</string>
-    <string name="re1">每日</string>
-    <string name="re2">次，每次</string>
+    <string name="alarm_one_day">每日</string>
+    <string name="alarm_time">次</string>
     <string name="notification_on">提醒打开</string>
     <string name="notification_off">提醒关闭</string>
     <string name="quit_change">" 的更改已被取消"</string>
     <string name="toast_have_not_changed">该提醒事项未作出更改</string>
     <string name="toast_change_succeed">" 的提醒事项更改成功"</string>
-    <string name="noti_title">Time to take medicine now.</string>
+    <string name="noti_title">您设定的吃药时间到了。</string>
+    <string name="alarm_each_time">每次</string>
 </resources>

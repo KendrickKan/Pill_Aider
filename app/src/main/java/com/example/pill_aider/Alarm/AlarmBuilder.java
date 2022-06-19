@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
+import android.util.Log;
 
 import com.example.pill_aider.Entity.PillAiderFunction;
 import com.example.pill_aider.Entity.Reminder;
@@ -55,7 +56,7 @@ public class AlarmBuilder {
 //            Log.e("构造器",String.valueOf(MilisOfOneDay));
 //            Log.e("构造器",String.valueOf(dinH));
 //            Log.e("构造器",String.valueOf(dinM));
-//            Log.e("构造器",String.valueOf(getMilliSecondsNext(dinH, dinM)));
+            Log.e("构造器",String.valueOf(getMilliSecondsNext(dinH, dinM)));
         }
 
         if(reminder.getNum_day() != 2){

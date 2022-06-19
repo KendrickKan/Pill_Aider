@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 //        for(int i = 0;i<users.size();i++){
 //            userViewModel.deleteUser(users.get(i));
 //        }
-        User user = new User("10:01","15:20","01:06",5,5);
+        User user = new User("10:01","15:20","02:21",5,5);
         user.setId(99);
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         if(userViewModel.getUserByID(99) == null)
@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlarmBuilder alarm = new AlarmBuilder(user);
         alarm.createAlarm(this, r);
+//        alarm.createAlarm(this, r);
 //        userViewModel.insertUser(user);
 //
 //        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");

@@ -33,16 +33,12 @@ public class AlarmActivity extends AppCompatActivity {
         num_day = findViewById(R.id.textView66);
         dasage_per_time = findViewById(R.id.textView64);
         item_type = findViewById(R.id.textView65);
-        item_time = findViewById(R.id.textView69);
-        item_rem = findViewById(R.id.textView61);
         notice = findViewById(R.id.textView63);
 
         item_name.setText(reminder.getItem_name());
-        num_day.setText(reminder.getNum_day());
-        dasage_per_time.setText(reminder.getDasage_per_time());
-        item_type.setText(reminder.getItem_type());
-        item_time.setText(reminder.getItem_time());
-        item_rem.setText(reminder.getItem_rem());
+        num_day.setText(String.valueOf(reminder.getNum_day()));
+        dasage_per_time.setText(String.valueOf(reminder.getDasage_per_time()));
+        item_type.setText(String.valueOf(reminder.getItem_type()));
         notice.setText(reminder.getNotice());
     }
 }

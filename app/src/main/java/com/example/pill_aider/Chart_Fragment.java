@@ -158,22 +158,26 @@ public class Chart_Fragment extends Fragment {
      * @description 更新数据
      */
     private void RefreshData() {
-        List<Report> originalList = new ArrayList<>();
-        originalList.add(new Report("1",1,2));
-        originalList.add(new Report("2",2,1));
-        originalList.add(new Report("3",3,3));
-        originalList.add(new Report("4",1,4));
-        originalList.add(new Report("5",6,2));
-        originalList.add(new Report("6",1,2));
-        originalList.add(new Report("1",1,2));
-        originalList.add(new Report("2",2,1));
-        originalList.add(new Report("3",3,3));
-        originalList.add(new Report("4",1,4));
-        originalList.add(new Report("5",6,2));
-        originalList.add(new Report("6",1,2));
+        ReportViewModel reportViewModel = new ViewModelProvider(this).get(ReportViewModel.class);
+        List<Report> originalList = reportViewModel.getAllReports();
+//        List<Report> originalList = new ArrayList<>();
+//        originalList.add(new Report("1",1,2));
+//        originalList.add(new Report("2",2,1));
+//        originalList.add(new Report("3",3,3));
+//        originalList.add(new Report("4",1,4));
+//        originalList.add(new Report("5",6,2));
+//        originalList.add(new Report("6",1,2));
+//        originalList.add(new Report("1",1,2));
+//        originalList.add(new Report("2",2,1));
+//        originalList.add(new Report("3",3,3));
+//        originalList.add(new Report("4",1,4));
+//        originalList.add(new Report("5",6,2));
+//        originalList.add(new Report("6",1,2));
 
         if(originalList == null)
             Log.d("debug","数据为空");
+        else
+            Log.d("debug",String.valueOf(originalList.size()));
         List<Entry> total = new ArrayList<>();//总次数
         List<Entry> token = new ArrayList<>();//已服用次数
 
