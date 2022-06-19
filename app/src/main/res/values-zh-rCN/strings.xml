@@ -71,6 +71,9 @@
     <string name="pill_type_piece">片</string>
     <string name="pill_type_grain">粒</string>
     <string name="pill_type_ml">ml</string>
+    <string name="toast_quit_app">不同意我们的免责声明将无法使用该软件</string>
+    <string name="toast_input_fullfill">表项输入不完整</string>
+    <string name="toast_insert_succeed">插入成功</string>
     <string name="widget_every_day">今天还需</string>
     <string name="widget_times_left">次</string>
     <string name="widget_take_medecine">距离下次服药</string>

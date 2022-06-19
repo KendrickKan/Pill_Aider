@@ -44,7 +44,7 @@
     <string name="chart_button_refresh">Refresh</string>
     <string name="chart_line_label_total">total</string>
     <string name="chart_line_label_token">token</string>
-    <string name="chart_unit">time</string>
+    <string name="chart_unit">times</string>
     <string name="tittle_cautions">Cautions</string>
     <string name="reminder_type_to_input">type to input</string>
     <string name="reminder_type_to_input2">type to input</string>
@@ -70,6 +70,9 @@
     <string name="pill_type_piece">pieces</string>
     <string name="pill_type_grain">grain</string>
     <string name="pill_type_ml">ml</string>
+    <string name="toast_quit_app">You can\'t use our app unless you agree</string>
+    <string name="toast_input_fullfill">Please input complely</string>
+    <string name="toast_insert_succeed">insert succeed</string>
     <string name="widget_every_day">Today</string>
     <string name="widget_times_left">times left</string>
     <string name="widget_take_medecine">Next notification is coming in</string>

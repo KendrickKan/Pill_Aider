@@ -278,6 +278,7 @@ public class Pill_List_Fragment extends Fragment {
             @Override
             public void OnItemClick(View view, Reminder data) {
                 //此处进行监听事件的业务处理
+
                 Toast.makeText(getActivity(),"我是item",Toast.LENGTH_SHORT).show();
             }
         });

@@ -100,7 +100,7 @@ public class MyLineChart extends LineChart {
 
                 //通过canvas绘制虚线
                 Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                mPaint.setColor(this.getContext().getColor(R.color.color_orange));
+                mPaint.setColor(this.getContext().getColor(R.color.pill_aider_orange));
                 mPaint.setStyle(Paint.Style.STROKE);
                 mPaint.setStrokeWidth(3);
                 mPaint.setPathEffect(new DashPathEffect(new float[]{15, 10}, 0));

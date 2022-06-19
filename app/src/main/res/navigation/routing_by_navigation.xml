@@ -11,7 +11,10 @@
         <action
             android:id="@+id/action_beginFragment_to_protocolFragment"
             app:destination="@id/protocolFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/protocolFragment"
@@ -21,7 +24,10 @@
         <action
             android:id="@+id/action_protocolFragment_to_pill_List_Fragment"
             app:destination="@id/pill_List_Fragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/pill_List_Fragment"
@@ -30,16 +36,32 @@
         tools:layout="@layout/fragment_pill__list_" >
         <action
             android:id="@+id/action_pill_List_Fragment_to_chart_Fragment"
-            app:destination="@id/chart_Fragment" />
+            app:destination="@id/chart_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_pill_List_Fragment_to_settings_Fragment"
-            app:destination="@id/settings_Fragment" />
+            app:destination="@id/settings_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_pill_List_Fragment_to_add_Pills_Fragment"
-            app:destination="@id/add_Pills_Fragment" />
+            app:destination="@id/add_Pills_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_pill_List_Fragment_to_change_Pills_Fragment"
-            app:destination="@id/change_Pills_Fragment" />
+            app:destination="@id/change_Pills_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/chart_Fragment"
@@ -48,10 +70,18 @@
         tools:layout="@layout/fragment_chart_" >
         <action
             android:id="@+id/action_chart_Fragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            app:destination="@id/pill_List_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_chart_Fragment_to_settings_Fragment"
-            app:destination="@id/settings_Fragment" />
+            app:destination="@id/settings_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/settings_Fragment"
@@ -60,16 +90,32 @@
         tools:layout="@layout/fragment_settings_" >
         <action
             android:id="@+id/action_settings_Fragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            app:destination="@id/pill_List_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_settings_Fragment_to_chart_Fragment"
-            app:destination="@id/chart_Fragment" />
+            app:destination="@id/chart_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_settings_Fragment_to_developer_Fragment"
-            app:destination="@id/developer_Fragment" />
+            app:destination="@id/developer_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_settings_Fragment_to_protocolFragment"
-            app:destination="@id/protocolFragment" />
+            app:destination="@id/protocolFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/add_Pills_Fragment"
@@ -78,7 +124,11 @@
         tools:layout="@layout/fragment_add__pills_" >
         <action
             android:id="@+id/action_add_Pills_Fragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            app:destination="@id/pill_List_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/change_Pills_Fragment"
@@ -87,7 +137,11 @@
         tools:layout="@layout/fragment_change__pills_" >
         <action
             android:id="@+id/action_change_Pills_Fragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            app:destination="@id/pill_List_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/developer_Fragment"
@@ -96,6 +150,10 @@
         tools:layout="@layout/fragment_developer_" >
         <action
             android:id="@+id/action_developer_Fragment_to_settings_Fragment"
-            app:destination="@id/settings_Fragment" />
+            app:destination="@id/settings_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>

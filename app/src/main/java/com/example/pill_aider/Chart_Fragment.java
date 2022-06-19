@@ -110,13 +110,13 @@ public class Chart_Fragment extends Fragment {
 
         reportViewModel = new ViewModelProvider(this).get(ReportViewModel.class);
         //设置刷新按钮响应
-        Button refreshButton = view.findViewById(R.id.button_fresh);
-        refreshButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                onButtonRefreshClicked();
-            }
-        });
+//        Button refreshButton = view.findViewById(R.id.button_fresh);
+//        refreshButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                onButtonRefreshClicked();
+//            }
+//        });
 
         initListener();
         initiateChart();
@@ -201,11 +201,11 @@ public class Chart_Fragment extends Fragment {
         totalLine.setDrawFilled(true);
         //设置折现填充的颜色(透明度为0x85/0x255 在33左右)
         //详情原因可以查看{@link LineRadarDataSet#mFillAlpha 参数相关定义}
-        totalLine.setFillColor(Color.parseColor("#c04851"));
+        totalLine.setFillColor(Color.BLUE);
         //设置折现的颜色
-        totalLine.setColor(Color.parseColor("#c04851"));
+        totalLine.setColor(Color.parseColor("#1A3DBA"));
         //折线的宽度
-        totalLine.setLineWidth(2);
+        totalLine.setLineWidth(3);
         //设置折线模式为圆滑的曲线
         totalLine.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         //是否绘制
@@ -222,11 +222,11 @@ public class Chart_Fragment extends Fragment {
     private void setTokenLineStyle() {
 
         tokenLine.setDrawFilled(true);
-        tokenLine.setFillColor(Color.GRAY);
+        tokenLine.setFillColor(Color.BLUE);
         //设置折现的颜色
-        tokenLine.setColor(Color.RED);
+        tokenLine.setColor(Color.parseColor("#1A3DBA"));
         //折线的宽度
-        tokenLine.setLineWidth(2);
+        tokenLine.setLineWidth(3);
         //设置折线模式为圆滑的曲线
         tokenLine.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         //是否绘制
@@ -324,7 +324,7 @@ public class Chart_Fragment extends Fragment {
 
         //设置图例不显示
         Legend legend = binding.linechart.getLegend();
-        legend.setTextColor(Color.BLACK);
+        legend.setTextColor(Color.LTGRAY);
         legend.setEnabled(true);
 
 //        //创建覆盖物并选择中心位置数据高亮

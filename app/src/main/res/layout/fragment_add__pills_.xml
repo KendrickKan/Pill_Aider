@@ -445,7 +445,7 @@
         android:ems="10"
         android:hint="@string/reminder_type_to_input2"
         android:inputType="textPersonName"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColorHint="@color/color_cccccc"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline46"

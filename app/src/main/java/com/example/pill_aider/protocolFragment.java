@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,6 +77,8 @@ public class protocolFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(), getContext().getString(R.string.toast_quit_app), Toast.LENGTH_SHORT);//实例化toast对象
+                toast.show();
                 ActivityCollector.finishALL();
             }
         });
