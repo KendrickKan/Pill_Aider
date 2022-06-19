@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.Pill_Aider.AppWidget.Container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -103,5 +104,17 @@
         android:text="@string/widget_times_left"
         android:textColor="@color/pill_aider_blue"
         android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/textView31"
+        android:layout_alignBottom="@+id/textView31"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="-2dp"
+        android:layout_toEndOf="@+id/textView31"
+        android:src="@drawable/logo_pill_aider" />
 
 </RelativeLayout>
