@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.pill_aider.Alarm.AlarmBuilder;
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
@@ -97,11 +98,12 @@ public class MainActivity extends AppCompatActivity {
 //        for(int i = 0;i<users.size();i++){
 //            userViewModel.deleteUser(users.get(i));
 //        }
-//        User user = new User("10:01","15:20","21:21",5,5);
+//        User user = new User("10:01","15:20","21:10",5,5);
+//        AlarmBuilder alarm = new AlarmBuilder(user);
+//        alarm.setAlarm(this, new Reminder("iqw",3,2,2,3,3,"kldsjf"));
 //        userViewModel.insertUser(user);
-//        Log.d(TAG, "Hour: "+String.valueOf(userViewModel.getRecentTime().get(0)));
 //
-//        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"大郎要按时吃药嗷");
+//        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");
 //        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
 //        reminderViewModel.insertReminder(reminder);
 //
