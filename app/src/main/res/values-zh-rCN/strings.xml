@@ -62,8 +62,6 @@
     <string name="developer_people">李广通,阚东,李洲诚,吕辉,柳翰坤</string>
     <string name="Settings_tittle">个性化设置</string>
     <string name="chart_tittle">健康日报</string>
-    <string name="re1">每日</string>
-    <string name="re2">次，每次</string>
     <string name="eat_before_meal">餐前服用</string>
     <string name="eat_with_meal">随餐服用</string>
     <string name="eat_after_meal">餐后服用</string>
@@ -73,4 +71,9 @@
     <string name="pill_type_piece">片</string>
     <string name="pill_type_grain">粒</string>
     <string name="pill_type_ml">ml</string>
+    <string name="widget_every_day">今天还需</string>
+    <string name="widget_times_left">次</string>
+    <string name="widget_take_medecine">距离下次服药</string>
+    <string name="re1">每日</string>
+    <string name="re2">次，每次</string>
 </resources>

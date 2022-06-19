@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Pill_Aider.AppWidget.Container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:theme="@style/Theme.Pill_Aider.AppWidgetContainer"
+    >
+
+    <TextView
+        android:id="@+id/appwidget_text"
+        style="@style/Widget.Pill_Aider.AppWidget.InnerView"
+        android:layout_width="324dp"
+        android:layout_height="186dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:alpha="0.3"
+        android:backgroundTint="@color/light_blue_600"
+        android:contentDescription="@string/appwidget_text"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/appwidget_text"
+        android:layout_alignTop="@+id/appwidget_text"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="25dp"
+        android:alpha="0.7"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/app_name"
+        android:textColor="@color/pill_aider_blue"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_alignStart="@+id/appwidget_text"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="17dp"
+        android:alpha="0.5"
+        android:text="@string/widget_every_day"
+        android:textColor="@color/pill_aider_blue"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/textView32"
+        android:alpha="1"
+        android:text="times"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="46dp"
+        android:layout_toEndOf="@+id/textView35"
+        android:alpha="1"
+        android:text="times"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView32"
+        android:layout_alignStart="@+id/appwidget_text"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="17dp"
+        android:alpha="0.5"
+        android:text="@string/widget_take_medecine"
+        android:textColor="@color/pill_aider_blue"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/textView33"
+        android:alpha="0.5"
+        android:text="@string/widget_times_left"
+        android:textColor="@color/pill_aider_blue"
+        android:textSize="16sp" />
+
+</RelativeLayout>

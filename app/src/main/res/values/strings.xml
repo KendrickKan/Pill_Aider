@@ -61,8 +61,6 @@
     <string name="developer_people">Guangtong Li,Dong Kan,Zhoucheng Li,Hui Lv,Hankun Liu</string>
     <string name="Settings_tittle">Settings</string>
     <string name="chart_tittle">Health daily</string>
-    <string name="re1">One day</string>
-    <string name="re2">times, one time</string>
     <string name="eat_before_meal">before meal</string>
     <string name="eat_with_meal">with meal</string>
     <string name="eat_after_meal">after meal</string>
@@ -72,4 +70,11 @@
     <string name="pill_type_piece">pieces</string>
     <string name="pill_type_grain">grain</string>
     <string name="pill_type_ml">ml</string>
+    <string name="widget_every_day">Today</string>
+    <string name="widget_times_left">times left</string>
+    <string name="widget_take_medecine">Next notification is coming in</string>
+    <string name="appwidget_text" translatable="false">EXAMPLE</string>
+    <string name="app_widget_description" translatable="false">This is an app widget description</string>
+    <string name="re1">One day</string>
+    <string name="re2">times, one time</string>
 </resources>

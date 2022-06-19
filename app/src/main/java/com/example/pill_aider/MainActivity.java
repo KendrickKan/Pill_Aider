@@ -90,15 +90,16 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        List<User> users = userViewModel.getAllUsers();
-        for(int i = 0;i<users.size();i++){
-            userViewModel.deleteUser(users.get(i));
-        }
-        User user = new User("10:01","15:20","21:21",5,5);
-        userViewModel.insertUser(user);
+//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        List<User> users = userViewModel.getAllUsers();
+//        for(int i = 0;i<users.size();i++){
+//            userViewModel.deleteUser(users.get(i));
+//        }
+//        User user = new User("10:01","15:20","21:21",5,5);
+//        userViewModel.insertUser(user);
+//        Log.d(TAG, "Hour: "+String.valueOf(userViewModel.getRecentTime().get(0)));
 //
-//        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");
+//        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"大郎要按时吃药嗷");
 //        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
 //        reminderViewModel.insertReminder(reminder);
 //
