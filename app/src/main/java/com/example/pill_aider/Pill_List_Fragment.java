@@ -129,7 +129,7 @@ public class Pill_List_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+//        setTheme(R.style.Color1SwitchStyle);
         //获取fragment的layout
         view = inflater.inflate(R.layout.fragment_pill__list_, container, false);
         //对recycleview进行配置

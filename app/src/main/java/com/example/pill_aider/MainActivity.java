@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // switch按钮颜色统一设定
-        setTheme(R.style.Color1SwitchStyle);
+//        setTheme(R.style.Color1SwitchStyle);
         setContentView(R.layout.activity_main);
         ActivityCollector.activities.add(this);    // protocol 点按退出（联合 activitycollector
         //实现沉浸式状态栏

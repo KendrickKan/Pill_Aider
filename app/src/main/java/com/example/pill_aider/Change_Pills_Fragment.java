@@ -90,6 +90,8 @@ public class Change_Pills_Fragment extends Fragment {
     private int num_of_day_i=0,num_per_time_i=0,item_type_i=0,item_time_i=0,item_rem_i=0;    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //viewmodel配置
+        ReminderViewModel database_viewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
         int id_for_change=getArguments().getInt("id_for_change");
         name_s=getArguments().getString("name1");
         String name_forever = name_s;
@@ -103,8 +105,6 @@ public class Change_Pills_Fragment extends Fragment {
         System.out.println(num_per_time_i);
         System.out.println(item_time_i);
         System.out.println(item_rem_i);
-        //viewmodel配置
-        ReminderViewModel database_viewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
         //绑定输入文本框
         name = getView().findViewById(R.id.editTextTextPersonName3);
         num_of_day = getView().findViewById(R.id.editTextNumber3);
@@ -318,10 +318,10 @@ public class Change_Pills_Fragment extends Fragment {
                 else{  //有效更改
                     System.out.println("正在更改");
                     Log.d("zhengzaigenggai1","huhu");
-//                    Reminder reminder_to_update=new Reminder(name_s,num_of_day_i,num_per_time_i,item_type_i,item_time_i,item_rem_i,notice_s);
-//                    reminder_to_update.setItem_id(id_for_change);
-                    Reminder reminder_to_update=database_viewModel.getReminderByID(id_for_change);
-                    reminder_to_update.setItem_name("大傻逼");
+                    Reminder reminder_to_update=new Reminder(name_s,num_of_day_i,num_per_time_i,item_type_i,item_time_i,item_rem_i,notice_s);
+                    reminder_to_update.setItem_id(id_for_change);
+//                    Reminder reminder_to_update=database_viewModel.getReminderByID(id_for_change);
+//                    reminder_to_update.setItem_name("大傻逼");
                     database_viewModel.updateReminder(reminder_to_update);
                     Toast toast = Toast.makeText(getActivity(),"\""+name_forever+"\""+getContext().getString(R.string.toast_change_succeed), Toast.LENGTH_SHORT);//实例化toast对象
                     toast.show();
