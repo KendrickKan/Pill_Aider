@@ -5,12 +5,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
-import android.util.Log;
 
 import com.example.pill_aider.Entity.PillAiderFunction;
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.User;
-import com.example.pill_aider.MainActivity;
 
 import java.util.List;
 
@@ -20,11 +18,14 @@ import java.util.List;
 public class AlarmBuilder {
     static private final long MilisOfOneDay = 1000*60*60*24;
     static final String action =    "com.example.pill_aider.Alarm.AlarmReceiverActivity.set_notify";
-    static final String ExtraName = "com.example.pill_aider.Alarm.AlarmReceiverActivity.Extra";
+    static final String ExtraReminderId = "com.example.pill_aider.Alarm.AlarmReceiverActivity.ExtraReminderId";
+    static final String ExtraUserId = "com.example.pill_aider.Alarm.AlarmReceiverActivity.ExtraUserId";
 
     int breakH,breakM,lunchH,lunchM,dinH,dinM;
+    int userId;
 
     public AlarmBuilder(User user){
+        userId = user.getId();
         List<Integer> list = PillAiderFunction.stringToTwoTime(user.getBre_time());
         breakH = list.get(0);
         breakM = list.get(1);
@@ -41,12 +42,12 @@ public class AlarmBuilder {
      * @param context
      * @param reminder
      */
-    public void setAlarm(Context context, Reminder reminder){
+    public void createAlarm(Context context, Reminder reminder){
         AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         if(reminder.getNum_day() == 2 || reminder.getNum_day()==3) {
-            PendingIntent breakIntent = getPendingIntent(context, reminder.getItem_id(), toId1(reminder), PendingIntent.FLAG_UPDATE_CURRENT);
-            PendingIntent dinIntent   = getPendingIntent(context, reminder.getItem_id(), toId3(reminder), PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent breakIntent = getPendingIntent(context, reminder.getItem_id(), toId1(reminder), userId, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent dinIntent   = getPendingIntent(context, reminder.getItem_id(), toId3(reminder), userId, PendingIntent.FLAG_UPDATE_CURRENT);
 //            alarm.setExact(AlarmManager.RTC_WAKEUP, getMilliSecondsNext(breakH,breakM), breakIntent);
 //            alarm.setExact(AlarmManager.RTC_WAKEUP, getMilliSecondsNext(dinH,dinM), dinIntent);
             alarm.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+ getMilliSecondsNext(breakH,breakM), MilisOfOneDay, breakIntent);
@@ -58,9 +59,17 @@ public class AlarmBuilder {
         }
 
         if(reminder.getNum_day() != 2){
-            PendingIntent lunchIntent = getPendingIntent(context, reminder.getItem_id(), toId2(reminder), PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent lunchIntent = getPendingIntent(context, reminder.getItem_id(), toId2(reminder), userId, PendingIntent.FLAG_UPDATE_CURRENT);
             alarm.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+ getMilliSecondsNext(lunchH,lunchM), MilisOfOneDay, lunchIntent);
         }
+    }
+
+    /**
+     * @description 更新一个提醒
+     */
+    public void updateAlarm(Context context, Reminder reminder){
+        cancelAlarm(context, reminder);
+        createAlarm(context, reminder);
     }
 
     /**
@@ -72,23 +81,24 @@ public class AlarmBuilder {
         AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         if(reminder.getNum_day()==2||reminder.getNum_day()==3){
-            PendingIntent breakIntent = getPendingIntent(context, reminder.getItem_id(), toId1(reminder), PendingIntent.FLAG_CANCEL_CURRENT);
-            PendingIntent lunchIntent = getPendingIntent(context, reminder.getItem_id(), toId2(reminder), PendingIntent.FLAG_CANCEL_CURRENT);
+            PendingIntent breakIntent = getPendingIntent(context, reminder.getItem_id(), toId1(reminder), userId, PendingIntent.FLAG_CANCEL_CURRENT);
+            PendingIntent lunchIntent = getPendingIntent(context, reminder.getItem_id(), toId2(reminder), userId, PendingIntent.FLAG_CANCEL_CURRENT);
             alarm.cancel(breakIntent);
             alarm.cancel(lunchIntent);
 
         }
         if(reminder.getNum_day()!=2){
-            PendingIntent dinIntent   = getPendingIntent(context, reminder.getItem_id(), toId3(reminder), PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent dinIntent   = getPendingIntent(context, reminder.getItem_id(), toId3(reminder), userId, PendingIntent.FLAG_UPDATE_CURRENT);
             alarm.cancel(dinIntent);
         }
     }
 
-    static private PendingIntent getPendingIntent(Context context, int reminderId, int intentId, int flag){
+    static private PendingIntent getPendingIntent(Context context, int reminderId, int intentId, int userId, int flag){
         //TODO 修改为新的提醒activity
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, AlarmActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(ExtraName, reminderId);
+        intent.putExtra(ExtraReminderId, reminderId);
+        intent.putExtra(ExtraUserId, userId);
 
         intent.setAction(action);
 

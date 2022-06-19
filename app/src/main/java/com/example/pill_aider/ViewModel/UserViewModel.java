@@ -53,7 +53,7 @@ public class UserViewModel extends AndroidViewModel {
                 return userList.get(i);
             }
         }
-        return userList.get(userList.size() - 1);
+        return null;
     }
 
 

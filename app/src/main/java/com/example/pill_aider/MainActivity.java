@@ -16,10 +16,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.pill_aider.Alarm.AlarmBuilder;
-import com.example.pill_aider.Alarm.MediaUtil;
-import com.example.pill_aider.Alarm.VibrateUtil;
 import com.example.pill_aider.Entity.Reminder;
-import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.ReportViewModel;
@@ -102,9 +99,21 @@ public class MainActivity extends AppCompatActivity {
 //        for(int i = 0;i<users.size();i++){
 //            userViewModel.deleteUser(users.get(i));
 //        }
-//        User user = new User("10:01","15:20","21:10",5,5);
-//        AlarmBuilder alarm = new AlarmBuilder(user);
-//        alarm.setAlarm(this, new Reminder("iqw",3,2,2,3,3,"kldsjf"));
+        User user = new User("10:01","15:20","01:06",5,5);
+        user.setId(99);
+        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        if(userViewModel.getUserByID(99) == null)
+            userViewModel.insertUser(user);
+        else
+            userViewModel.updateUser(user);
+        Reminder r = new Reminder("iqw",3,2,2,3,3,"kldsjf");
+        r.setItem_id(9);
+        ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+        if(reminderViewModel.getReminderByID(9) == null)
+            reminderViewModel.insertReminder(r);
+
+        AlarmBuilder alarm = new AlarmBuilder(user);
+        alarm.createAlarm(this, r);
 //        userViewModel.insertUser(user);
 //
 //        Reminder reminder = new Reminder("感冒灵",3,1,1,1,3,"我是lhk的好父亲");

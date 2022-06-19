@@ -49,7 +49,7 @@ public class ReminderViewModel extends AndroidViewModel {
                 return reminderList.get(i);
             }
         }
-        return reminderList.get(reminderList.size() - 1);
+        return null;
     }
 
     //如果有一次的返回一个list 0，1，0
