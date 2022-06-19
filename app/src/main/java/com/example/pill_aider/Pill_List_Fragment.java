@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +22,7 @@ import com.example.pill_aider.ViewModel.UserViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -117,14 +117,14 @@ public class Pill_List_Fragment extends Fragment {
     //自定义recyclerveiw的适配器
     private CollectRecycleAdapter mCollectRecyclerAdapter;
     Reminder reminder = new Reminder("苯巴比妥",1,2,3,1,1,"lgtswez");
-    Reminder reminder1 = new Reminder("阿莫西",1,2,3,1,1,"lgtswez");
-    Reminder reminder2 = new Reminder("APTX4869",2,1,2,2,2,"wakd");
-    Reminder reminder3 = new Reminder("雾切之回光",5,6,1,3,3,"kdalh");
-    Reminder reminder4 = new Reminder("薙草之稻光",3,4,2,1,2,"lhalgt");
-    Reminder reminder5 = new Reminder("苍古自由之誓",3,7,3,1,3,"23333");
-    Reminder reminder6 = new Reminder("松籁响起之时",1,2,3,2,3,"hjdshajkf");
-    private TextView item_name, num_day, dasage_per_time, item_type, item_time, item_rem, notice;
-    private View root;
+//    Reminder reminder1 = new Reminder("阿莫西",1,2,3,1,1,"lgtswez");
+//    Reminder reminder2 = new Reminder("APTX4869",2,1,2,2,2,"wakd");
+//    Reminder reminder3 = new Reminder("雾切之回光",5,6,1,3,3,"kdalh");
+//    Reminder reminder4 = new Reminder("薙草之稻光",3,4,2,1,2,"lhalgt");
+//    Reminder reminder5 = new Reminder("苍古自由之誓",3,7,3,1,3,"23333");
+//    Reminder reminder6 = new Reminder("松籁响起之时",1,2,3,2,3,"hjdshajkf");
+//    private TextView item_name, num_day, dasage_per_time, item_type, item_time, item_rem, notice;
+//    private View root;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -135,7 +135,7 @@ public class Pill_List_Fragment extends Fragment {
         //对recycleview进行配置
         initRecyclerView();
         //模拟数据
-        initData(inflater, container, savedInstanceState);
+        initData();
         return view;
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_pill__list_, container, false);
@@ -144,7 +144,7 @@ public class Pill_List_Fragment extends Fragment {
     /**
      * TODO 模拟数据
      */
-    private void initData(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    private void initData() {
 //        if(root == null){
 //            root = inflater.inflate(R.layout.item_list,container,false);
 //        }
@@ -167,7 +167,17 @@ public class Pill_List_Fragment extends Fragment {
             goodsEntity.setItem_time(reminders.get(i).getItem_time());
             goodsEntity.setItem_rem(reminders.get(i).getItem_rem());
             goodsEntity.setNotice(reminders.get(i).getNotice());
-            goodsEntityList.add(goodsEntity);
+            boolean flag=true;
+            for (int j=0;j<goodsEntityList.size();j++){
+                if(Objects.equals(goodsEntity.getItem_name(), goodsEntityList.get(j).getItem_name())){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                goodsEntityList.add(goodsEntity);
+            }
+//            goodsEntityList.add(goodsEntity);
         }
 //        for(int i=0;i<reminders.size();i++) {
 //            item_name.setText(reminder.getItem_name());
