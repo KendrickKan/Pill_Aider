@@ -29,12 +29,10 @@ import com.example.pill_aider.databinding.ActivityMainBinding;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     private ActivityMainBinding binding;
     UserViewModel userViewModel;
     ReminderViewModel reminderViewModel;
     ReportViewModel reportViewModel;
-
     // 导航栏沉浸
     //是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
     protected boolean useThemestatusBarColor = false;

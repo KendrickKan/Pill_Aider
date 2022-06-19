@@ -79,4 +79,9 @@
     <string name="widget_take_medecine">距离下次服药</string>
     <string name="re1">每日</string>
     <string name="re2">次，每次</string>
+    <string name="notification_on">提醒打开</string>
+    <string name="notification_off">提醒关闭</string>
+    <string name="quit_change">" 的更改已被取消"</string>
+    <string name="toast_have_not_changed">该提醒事项未作出更改</string>
+    <string name="toast_change_succeed">" 的提醒事项更改成功"</string>
 </resources>

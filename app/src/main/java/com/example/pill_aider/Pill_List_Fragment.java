@@ -1,9 +1,12 @@
 package com.example.pill_aider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -273,13 +276,44 @@ public class Pill_List_Fragment extends Fragment {
         mCollectRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         //设置item的分割线
         mCollectRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+//        Switch switcher = getView().findViewById(R.id.switch1);
+//        switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked)
+//                {
+//                    //开启通知
+//
+//
+//
+//                    Toast.makeText(getActivity(),getContext().getString(R.string.notification_on),Toast.LENGTH_SHORT).show();
+//                }else{
+//                    //取消通知
+//
+//                    Toast.makeText(getActivity(),getContext().getString(R.string.notification_off),Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
         //RecyclerView中没有item的监听事件，需要自己在适配器中写一个监听事件的接口。参数根据自定义
         mCollectRecyclerAdapter.setOnItemClickListener(new CollectRecycleAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(View view, Reminder data) {
                 //此处进行监听事件的业务处理
-
-                Toast.makeText(getActivity(),"我是item",Toast.LENGTH_SHORT).show();
+//                setArguments().set;
+                int id_for_change=data.getItem_id(); //用于修改当前pill list
+                Log.d("i_am_here",String.valueOf(id_for_change));
+                //fragment传参
+                Bundle bundle2=new Bundle();
+                bundle2.putInt("id_for_change",id_for_change);
+                bundle2.putString("name1",data.getItem_name());
+                bundle2.putString("notice1",data.getNotice());
+                bundle2.putInt("num_of_day1",data.getNum_day());
+                bundle2.putInt("num_per_time1",data.getDasage_per_time());
+                bundle2.putInt("item_type1",data.getItem_type());
+                bundle2.putInt("item_time1",data.getItem_time());
+                bundle2.putInt("item_rem1",data.getItem_rem());
+                NavController controller = Navigation.findNavController(view);
+                controller.navigate(R.id.action_pill_List_Fragment_to_change_Pills_Fragment,bundle2);
             }
         });
     }

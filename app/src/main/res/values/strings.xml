@@ -80,4 +80,9 @@
     <string name="app_widget_description" translatable="false">This is an app widget description</string>
     <string name="re1">One day</string>
     <string name="re2">times, one time</string>
+    <string name="notification_on">notifications has been turned on</string>
+    <string name="notification_off">notifications has been turned off</string>
+    <string name="quit_change">\'s change has been cancelled</string>
+    <string name="toast_have_not_changed">The infomation has\'t been changed</string>
+    <string name="toast_change_succeed">has been changed successfully</string>
 </resources>
