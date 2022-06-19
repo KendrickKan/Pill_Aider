@@ -121,15 +121,17 @@ public class Settings_Fragment extends Fragment {
             @Override
             public void onChanged(List<User> users) {
 //                for(int i=0;i<users.size();i++) {
-                user = users.get(users.size()-1);
-                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
-                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
-                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
-                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
-                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
-                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
-                rtimes.setText(String.valueOf(user.getRem_num()));
-                rinter.setText(String.valueOf(user.getInterval()));
+                if((users.get(users.size()-1))!=null){
+                    user = users.get(users.size()-1);
+                    bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+                    bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+                    lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+                    lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+                    dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+                    dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+                    rtimes.setText(String.valueOf(user.getRem_num()));
+                    rinter.setText(String.valueOf(user.getInterval()));
+                }
 //                }
 //                userViewModel.updateUser(user);
             }
