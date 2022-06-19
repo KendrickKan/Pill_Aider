@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -15,6 +16,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.pill_aider.Alarm.AlarmBuilder;
+import com.example.pill_aider.Alarm.MediaUtil;
+import com.example.pill_aider.Alarm.VibrateUtil;
 import com.example.pill_aider.Entity.Reminder;
 import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
+//        VibrateUtil.vibrate(this);
+//        MediaUtil.playRing(this);
 //        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 //        List<User> users = userViewModel.getAllUsers();
 //        for(int i = 0;i<users.size();i++){

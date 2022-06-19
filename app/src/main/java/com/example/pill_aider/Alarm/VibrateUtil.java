@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.VibrationAttributes;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
@@ -13,6 +14,8 @@ import androidx.annotation.RequiresApi;
  * @description 振动工具类
  */
 public class VibrateUtil {
+    static private final long[] pattern = {1000, 800, 800, 800};
+
     /**
      * 让手机振动
      */
@@ -20,12 +23,8 @@ public class VibrateUtil {
     public static void vibrate(Context context) {
         Vibrator vib = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
         if(vib.hasVibrator()){  //判断手机硬件是否有振动器
-            VibrationAttributes.Builder b = new VibrationAttributes.Builder();
-            b.setUsage(VibrationAttributes.USAGE_CLASS_ALARM);
-            VibrationAttributes v = b.build();
-//            VibrationEffect effect = new VibrationEffect();
-//
-//            vib.vibrate(VibrationEffect.EFFECT_HEAVY_CLICK, v);
+            VibrationEffect effect = VibrationEffect.createWaveform(pattern, 0);
+            vib.vibrate(effect);
         }
     }
 
