@@ -87,4 +87,6 @@
     <string name="toast_change_succeed">has been changed successfully</string>
     <string name="noti_title">Time to take medicine now.</string>
     <string name="alarm_each_time">each time</string>
+    <string name="button_fail">Fail</string>
+    <string name="Button_done">Done</string>
 </resources>

@@ -1,6 +1,13 @@
 plugins {
     id 'com.android.application'
 }
+android{
+    defaultConfig{
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"      // 原来是只支持32 下面的这些都可以加"arm64-v8a” 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+}
 
 android {
     compileSdk 32

@@ -24,8 +24,11 @@ import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
 
+import com.example.pill_aider.Alarm.AlarmBuilder;
 import com.example.pill_aider.Entity.Reminder;
+import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.ViewModel.ReminderViewModel;
+import com.example.pill_aider.ViewModel.UserViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -253,6 +256,12 @@ public class Add_Pills_Fragment extends Fragment {
                     database_viewModel.insertReminder(reminder_toinput);
                     Toast toast = Toast.makeText(getActivity(),"\""+name_s+"\""+getContext().getString(R.string.toast_insert_succeed), Toast.LENGTH_SHORT);//实例化toast对象
                     toast.show();
+
+                    //根据新加list添加notification（假设user唯一）
+                    UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
+                    User user = userViewModel.getAllUsers().get(0);
+                    AlarmBuilder alarm = new AlarmBuilder(user);
+                    alarm.createAlarm(getContext() ,reminder_toinput);
                     NavController controller = Navigation.findNavController(v);
                     //添加药品信息并进行数据绑定
                     controller.navigate(R.id.action_add_Pills_Fragment_to_pill_List_Fragment);

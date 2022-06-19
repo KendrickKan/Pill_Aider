@@ -86,4 +86,6 @@
     <string name="toast_change_succeed">" 的提醒事项更改成功"</string>
     <string name="noti_title">您设定的吃药时间到了。</string>
     <string name="alarm_each_time">每次</string>
+    <string name="button_fail">失败</string>
+    <string name="Button_done">完成</string>
 </resources>

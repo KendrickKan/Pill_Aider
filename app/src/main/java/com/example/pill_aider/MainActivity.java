@@ -99,21 +99,29 @@ public class MainActivity extends AppCompatActivity {
 //        for(int i = 0;i<users.size();i++){
 //            userViewModel.deleteUser(users.get(i));
 //        }
-        User user = new User("10:01","15:20","02:21",5,5);
-        user.setId(99);
-        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        if(userViewModel.getUserByID(99) == null)
-            userViewModel.insertUser(user);
-        else
-            userViewModel.updateUser(user);
-        Reminder r = new Reminder("iqw",3,2,2,3,3,"kldsjf");
-        r.setItem_id(9);
-        ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
-        if(reminderViewModel.getReminderByID(9) == null)
-            reminderViewModel.insertReminder(r);
 
-        AlarmBuilder alarm = new AlarmBuilder(user);
-        alarm.createAlarm(this, r);
+        // 通知测试！！！！！！！！！！！！！！！！！
+//        User user = new User("10:01","15:20","04:04",5,5);
+//        user.setId(99);
+//        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        if(userViewModel.getUserByID(99) == null)
+//            userViewModel.insertUser(user);
+//        else
+//            userViewModel.updateUser(user);
+//        AlarmBuilder alarm = new AlarmBuilder(user);
+//        Reminder r = new Reminder("iqw",3,2,2,3,3,"kldsjf");
+//        r.setItem_id(9);
+//        ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+//        if(reminderViewModel.getReminderByID(9) == null)
+//            reminderViewModel.insertReminder(r);
+//        alarm.createAlarm(this,r );
+        // ！！！！！！！！！！！！！！
+
+//
+//        AlarmBuilder alarm = new AlarmBuilder(user);
+//        alarm.createAlarm(this, r);
+
+
 //        alarm.createAlarm(this, r);
 //        userViewModel.insertUser(user);
 //

@@ -7,15 +7,30 @@
         <entry key="..\:/NJUSTFile/Pill_Aider/app/src/main/res/layout/fragment_dashboard.xml" value="0.22826086956521738" />
         <entry key="..\:/NJUSTFile/Pill_Aider/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/NJUSTFile/Pill_Aider/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.206" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable-v21/app_widget_inner_view_background.xml" value="0.206" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable-v24/bg_radius_report_marker.xml" value="0.22" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable-v24/bg_report_line.xml" value="0.22" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable-v24/bg_round_report_point_marker.xml" value="0.22" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/blue_thumb.xml" value="0.1635" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/blue_track.xml" value="0.1635" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/border_blue.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/border_blue_small_rado.xml" value="0.1" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/border_orange.xml" value="0.22" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/button_shape.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/guid_bottom_visible_chart_30.xml" value="0.1" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/light_gray_thumb.xml" value="0.1635" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/light_gray_track.xml" value="0.1635" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button_30.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_add_button_55.xml" value="0.1505" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_chart_button_60.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/pill_list_setting_button_60.xml" value="0.1" />
         <entry key="..\:/Pill_Aider/app/src/main/res/drawable/set_border.xml" value="0.1205" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/set_small_border.xml" value="0.1495" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/thumb.xml" value="0.1635" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/drawable/track.xml" value="0.1635" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/activity_alarm.xml" value="0.536" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_add__pills_.xml" value="0.15208333333333332" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_begin.xml" value="0.25181159420289856" />
@@ -28,11 +43,15 @@
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_pill__list_.xml" value="0.15208333333333332" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_protocol.xml" value="0.25" />
         <entry key="..\:/Pill_Aider/app/src/main/res/layout/fragment_settings_.xml" value="0.20478837109876016" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/item_list.xml" value="0.264" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/pill_aider_widget.xml" value="0.2453125" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/weight_custom_marker_view.xml" value="0.11543394613082514" />
+        <entry key="..\:/Pill_Aider/app/src/main/res/layout/weight_custom_point_marker_view.xml" value="0.11543394613082514" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/drawable-v24/bg_radius_report_marker.xml" value="0.22" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/drawable-v24/bg_report_line.xml" value="0.22" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/drawable-v24/bg_round_report_point_marker.xml" value="0.22" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/drawable/border_orange.xml" value="0.22" />
-        <entry key="..\:/code/android/Pill_Aider/app/src/main/res/layout/activity_alarm.xml" value="0.4" />
+        <entry key="..\:/code/android/Pill_Aider/app/src/main/res/layout/activity_alarm.xml" value="0.2708333333333333" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/layout/fragment_add__pills_.xml" value="0.21302083333333333" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/layout/fragment_change__pills_.xml" value="0.21302083333333333" />
         <entry key="..\:/code/android/Pill_Aider/app/src/main/res/layout/fragment_chart_.xml" value="0.536" />

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -147,6 +148,7 @@ public class CollectRecycleAdapter extends RecyclerView.Adapter<CollectRecycleAd
     class myViewHodler extends RecyclerView.ViewHolder {
 //        private ImageView mItemGoodsImg;
         private TextView item_name, num_day, dasage_per_time, item_type, item_time, item_rem, notice;
+        private Switch switch_on_off;
 //        private TextView mItemGoodsName;
 //        private TextView mItemGoodsPrice;
 
@@ -159,6 +161,7 @@ public class CollectRecycleAdapter extends RecyclerView.Adapter<CollectRecycleAd
             item_time = (TextView) itemView.findViewById(R.id.textView35);
             item_rem = (TextView) itemView.findViewById(R.id.textView36);
             notice = (TextView) itemView.findViewById(R.id.textView41);
+            switch_on_off = (Switch) itemView.findViewById(R.id.switch1);
 //            mItemGoodsImg = (ImageView) itemView.findViewById(R.id.item_goods_img);
 //            mItemGoodsName = (TextView) itemView.findViewById(R.id.textView);
 //            mItemGoodsPrice = (TextView) itemView.findViewById(R.id.textView2);

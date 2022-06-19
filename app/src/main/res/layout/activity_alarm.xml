@@ -8,107 +8,95 @@
 
     <View
         android:id="@+id/view25"
-        android:layout_width="338dp"
-        android:layout_height="216dp"
-        android:background="@drawable/border_orange"
+        android:layout_width="360dp"
+        android:layout_height="160dp"
+        android:background="@android:drawable/editbox_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.01999998" />
 
     <TextView
         android:id="@+id/textView63"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
         android:text="内容"
-        android:textColor="@color/pill_aider_blue"
+        android:textColor="@color/color_222222"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView43"
-        tools:layout_editor_absoluteX="64dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view25"
+        app:layout_constraintTop_toBottomOf="@+id/textView64" />
 
     <TextView
         android:id="@+id/textView64"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
         android:text="内容"
         android:textColor="@color/pill_aider_blue"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView43"
-        app:layout_constraintTop_toTopOf="@+id/textView43"
-        tools:layout_editor_absoluteX="152dp" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView67"
+        app:layout_constraintTop_toBottomOf="@+id/textView67" />
 
     <TextView
         android:id="@+id/textView65"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
+        android:fontFamily="sans-serif"
         android:text="内容"
         android:textColor="@color/pill_aider_blue"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView64"
         app:layout_constraintStart_toEndOf="@+id/textView64"
         app:layout_constraintTop_toTopOf="@+id/textView64"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView66"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="内容"
-        android:textColor="@color/pill_aider_blue"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView68"
-        app:layout_constraintStart_toEndOf="@+id/textView68"
-        app:layout_constraintTop_toTopOf="@+id/textView68"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <TextView
         android:id="@+id/textView67"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="sans-serif-black"
         android:text="标题"
         android:textColor="@color/pill_aider_blue"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView42"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
-    <TextView
-        android:id="@+id/textView68"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/alarm_one_day"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView67"
-        app:layout_constraintTop_toBottomOf="@+id/textView67" />
-
     <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/button_shape"
-        android:text="Button"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/button_fail"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/view25"
-        app:layout_constraintTop_toBottomOf="@+id/view25"
+        app:layout_constraintTop_toBottomOf="@+id/textView63"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="108dp"
         android:background="@drawable/button_shape"
-        android:text="Button"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/Button_done"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/button6"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="@+id/button6"
@@ -119,28 +107,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="sans-serif"
         android:text="@string/noti_title"
-        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="@+id/view25"
         app:layout_constraintTop_toTopOf="@+id/view25" />
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/alarm_each_time"
-        app:layout_constraintStart_toStartOf="@+id/textView68"
-        app:layout_constraintTop_toBottomOf="@+id/textView68" />
-
-    <TextView
-        android:id="@+id/textView44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/alarm_time"
-        app:layout_constraintBottom_toBottomOf="@+id/textView66"
-        app:layout_constraintTop_toTopOf="@+id/textView66"
-        tools:layout_editor_absoluteX="198dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
