@@ -419,7 +419,7 @@ public class Chart_Fragment extends Fragment {
      * @description 创建图表高亮覆盖物
      */
     public void createMakerView() {
-        ReportInfoMarkerView reportInfoMarkerView = new ReportInfoMarkerView(getContext(), "次");
+        ReportInfoMarkerView reportInfoMarkerView = new ReportInfoMarkerView(getContext(), getString(R.string.chart_unit));
         //避免覆盖物超出屏幕显示范围
         reportInfoMarkerView.setChartView(binding.linechart);
         binding.linechart.setReportInfoMarkerView(reportInfoMarkerView);
