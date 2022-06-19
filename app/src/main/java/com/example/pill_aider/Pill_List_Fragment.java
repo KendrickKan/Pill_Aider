@@ -5,9 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -163,6 +160,7 @@ public class Pill_List_Fragment extends Fragment {
         List<Reminder> reminders = reminderViewModel.getAllReminders();
         for (int i=0;i<reminders.size();i++){
             Reminder goodsEntity=new Reminder("lgt",1,2,3,1,1,"son");
+            goodsEntity.setItem_id(reminders.get(i).getItem_id());
             goodsEntity.setItem_name(reminders.get(i).getItem_name());
             goodsEntity.setNum_day(reminders.get(i).getNum_day());
             goodsEntity.setDasage_per_time(reminders.get(i).getDasage_per_time());
