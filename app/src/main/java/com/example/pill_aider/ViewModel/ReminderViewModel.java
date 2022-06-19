@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.pill_aider.Entity.Reminder;
+import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.Repository.PillAiderRepository;
 
 import java.util.ArrayList;
@@ -38,6 +39,17 @@ public class ReminderViewModel extends AndroidViewModel {
 
     public void deleteReminder(Reminder... reminders) {
         pillAiderRepository.deleteReminder(reminders);
+    }
+
+
+    public Reminder getReminderByID(int id) {
+        List<Reminder> reminderList = pillAiderRepository.getAllReminders();
+        for (int i = 0; i < reminderList.size(); i++) {
+            if (reminderList.get(i).getItem_id() == id) {
+                return reminderList.get(i);
+            }
+        }
+        return reminderList.get(reminderList.size() - 1);
     }
 
     //如果有一次的返回一个list 0，1，0

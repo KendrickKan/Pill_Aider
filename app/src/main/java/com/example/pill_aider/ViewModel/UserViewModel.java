@@ -46,6 +46,17 @@ public class UserViewModel extends AndroidViewModel {
         pillAiderRepository.deleteUser(users);
     }
 
+    public User getUserByID(int id) {
+        List<User> userList = pillAiderRepository.getAllUsers();
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).getId() == id) {
+                return userList.get(i);
+            }
+        }
+        return userList.get(userList.size() - 1);
+    }
+
+
     //获取当前时间到三餐时间的最近一个三餐时间
     //eg 返回午餐时间 list：12，21，0/1/2/3
     //其中0/1/2/3 代表处于的时段，0代表在早餐之前，1代表在早午餐间，以此类推
@@ -112,8 +123,7 @@ public class UserViewModel extends AndroidViewModel {
             if (bre_time >= nowM) {
                 list.add(bre_time_H - nowH);
                 list.add(bre_time_M - nowM);
-            }
-            else{
+            } else {
                 list.add(bre_time_H - nowH - 1);
                 list.add(60 - nowM + bre_time_M);
             }
@@ -143,8 +153,7 @@ public class UserViewModel extends AndroidViewModel {
             if (bre_time >= nowM) {
                 list.add(bre_time_H - nowH);
                 list.add(bre_time_M - nowM);
-            }
-            else{
+            } else {
                 list.add(bre_time_H - nowH - 1);
                 list.add(60 - nowM + bre_time_M);
             }
@@ -174,8 +183,7 @@ public class UserViewModel extends AndroidViewModel {
             if (bre_time >= nowM) {
                 list.add(bre_time_H - nowH);
                 list.add(bre_time_M - nowM);
-            }
-            else{
+            } else {
                 list.add(bre_time_H - nowH - 1);
                 list.add(60 - nowM + bre_time_M);
             }

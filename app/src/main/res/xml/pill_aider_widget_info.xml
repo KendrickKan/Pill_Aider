@@ -3,7 +3,7 @@
     android:description="@string/app_widget_description"
     android:initialKeyguardLayout="@layout/pill_aider_widget"
     android:initialLayout="@layout/pill_aider_widget"
-    android:minWidth="250dp"
+    android:minWidth="300dp"
     android:minHeight="110dp"
     android:previewImage="@drawable/pill_aider_widget"
     android:previewLayout="@layout/pill_aider_widget"
