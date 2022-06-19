@@ -10,7 +10,8 @@
         android:label="BeginFragment" >
         <action
             android:id="@+id/action_beginFragment_to_protocolFragment"
-            app:destination="@id/protocolFragment" />
+            app:destination="@id/protocolFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
     </fragment>
     <fragment
         android:id="@+id/protocolFragment"
@@ -19,7 +20,8 @@
         tools:layout="@layout/fragment_protocol" >
         <action
             android:id="@+id/action_protocolFragment_to_pill_List_Fragment"
-            app:destination="@id/pill_List_Fragment" />
+            app:destination="@id/pill_List_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
     </fragment>
     <fragment
         android:id="@+id/pill_List_Fragment"

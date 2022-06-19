@@ -12,9 +12,12 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
 
 /**
@@ -64,9 +67,28 @@ public class Change_Pills_Fragment extends Fragment {
         }
     }
 
+    private View add_view;
+    private EditText name, num_of_day, num_per_time, notice;
+    private MultiAutoCompleteTextView item_type,item_time,item_rem;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        String[] res_for_item_type={getString(R.string.pill_type_piece),getString(R.string.pill_type_grain),getString(R.string.pill_type_ml)};
+        String[] res_for_item_rem={getString(R.string.remind_ring),getString(R.string.remind_vibrate),getString(R.string.remind_ring_and_vibrate)};
+        String[] res_for_item_time={getString(R.string.eat_before_meal),getString(R.string.eat_with_meal),getString(R.string.eat_after_meal)};
+        //自动补全
+        ArrayAdapter<String> arrayAdapter4 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,res_for_item_type);
+        item_type = (MultiAutoCompleteTextView) getView().findViewById(R.id.multiAutoCompleteTextView4);
+        item_type.setAdapter(arrayAdapter4);
+        item_type.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        ArrayAdapter<String> arrayAdapter5 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,res_for_item_time);
+        item_time = (MultiAutoCompleteTextView) getView().findViewById(R.id.multiAutoCompleteTextView6);
+        item_time.setAdapter(arrayAdapter5);
+        item_time.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        ArrayAdapter<String> arrayAdapter6 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,res_for_item_rem);
+        item_rem = (MultiAutoCompleteTextView) getView().findViewById(R.id.multiAutoCompleteTextView7);
+        item_rem.setAdapter(arrayAdapter6);
+        item_rem.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
         Button button_8,button_9; // 8放弃更改并退回到药单 9保存更改并返回药单
         button_8 = getView().findViewById(R.id.button8);
         button_9 = getView().findViewById(R.id.button9);

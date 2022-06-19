@@ -62,4 +62,13 @@
     <string name="developer_people">李广通,阚东,李洲诚,吕辉,柳翰坤</string>
     <string name="Settings_tittle">个性化设置</string>
     <string name="chart_tittle">健康日报</string>
+    <string name="eat_before_meal">餐前服用</string>
+    <string name="eat_with_meal">随餐服用</string>
+    <string name="eat_after_meal">餐后服用</string>
+    <string name="remind_ring">响铃</string>
+    <string name="remind_vibrate">震动</string>
+    <string name="remind_ring_and_vibrate">响铃并震动</string>
+    <string name="pill_type_piece">片</string>
+    <string name="pill_type_grain">粒</string>
+    <string name="pill_type_ml">ml</string>
 </resources>
