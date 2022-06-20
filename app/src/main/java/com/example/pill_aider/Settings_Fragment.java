@@ -129,6 +129,16 @@ public class Settings_Fragment extends Fragment {
                 rtimes.setText(String.valueOf(user.getRem_num()));
                 rinter.setText(String.valueOf(user.getInterval()));
             }
+            else{
+                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+                rtimes.setText(String.valueOf(user.getRem_num()));
+                rinter.setText(String.valueOf(user.getInterval()));
+            }
         }
 //        userViewModel.insertUser(user);
 //        userViewModel.getAllUsersLive().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
