@@ -117,8 +117,8 @@ public class Settings_Fragment extends Fragment {
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         users = userViewModel.getAllUsers();
-        for(int i=0;i<users.size();i++) {
-            if (((users.size() - 1)) >= 1) {
+        if (users.size() >= 1) {
+            for(int i=0;i<users.size();i++) {
                 user = users.get(users.size() - 1);
                 bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
                 bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
@@ -129,19 +129,44 @@ public class Settings_Fragment extends Fragment {
                 rtimes.setText(String.valueOf(user.getRem_num()));
                 rinter.setText(String.valueOf(user.getInterval()));
             }
-            else{
-                user = new User("0:0","0:0","0:0",0,0);
-                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
-                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
-                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
-                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
-                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
-                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
-                rtimes.setText(String.valueOf(user.getRem_num()));
-                rinter.setText(String.valueOf(user.getInterval()));
-                userViewModel.insertUser(user);
-            }
         }
+        else{
+            user = new User("0:0","0:0","0:0",0,0);
+            bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+            bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+            lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+            lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+            dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+            dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+            rtimes.setText(String.valueOf(user.getRem_num()));
+            rinter.setText(String.valueOf(user.getInterval()));
+            userViewModel.insertUser(user);
+        }
+//        for(int i=0;i<users.size();i++) {
+//            if (((users.size() - 1)) >= 1) {
+//                user = users.get(users.size() - 1);
+//                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+//                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+//                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+//                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+//                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+//                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+//                rtimes.setText(String.valueOf(user.getRem_num()));
+//                rinter.setText(String.valueOf(user.getInterval()));
+//            }
+//            else{
+//                user = new User("0:0","0:0","0:0",0,0);
+//                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+//                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+//                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+//                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+//                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+//                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+//                rtimes.setText(String.valueOf(user.getRem_num()));
+//                rinter.setText(String.valueOf(user.getInterval()));
+//                userViewModel.insertUser(user);
+//            }
+//        }
 //        userViewModel.insertUser(user);
 //        userViewModel.getAllUsersLive().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
 //            @Override
