@@ -130,6 +130,7 @@ public class Settings_Fragment extends Fragment {
                 rinter.setText(String.valueOf(user.getInterval()));
             }
             else{
+                user = new User("0:0","0:0","0:0",0,0);
                 bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
                 bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
                 lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
@@ -138,6 +139,7 @@ public class Settings_Fragment extends Fragment {
                 dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
                 rtimes.setText(String.valueOf(user.getRem_num()));
                 rinter.setText(String.valueOf(user.getInterval()));
+                userViewModel.insertUser(user);
             }
         }
 //        userViewModel.insertUser(user);
