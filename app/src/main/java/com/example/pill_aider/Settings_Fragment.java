@@ -10,7 +10,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -75,6 +74,7 @@ public class Settings_Fragment extends Fragment {
     private EditText bhour, bmin, lhour, lmin, dhour, dmin, rtimes, rinter;
 //    UserDao users;
     User user = new User("0:0","0:0","0:0",0,0);
+    List<User> users;
     UserViewModel userViewModel;
     Button saveButton;
 
@@ -116,26 +116,40 @@ public class Settings_Fragment extends Fragment {
         rinter = root.findViewById(R.id.dhour4);
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-//        userViewModel.insertUser(user);
-        userViewModel.getAllUsersLive().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-//                for(int i=0;i<users.size();i++) {
-                if((users.get(users.size()-1))!=null){
-                    user = users.get(users.size()-1);
-                    bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
-                    bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
-                    lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
-                    lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
-                    dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
-                    dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
-                    rtimes.setText(String.valueOf(user.getRem_num()));
-                    rinter.setText(String.valueOf(user.getInterval()));
-                }
-//                }
-//                userViewModel.updateUser(user);
+        users = userViewModel.getAllUsers();
+        for(int i=0;i<users.size();i++) {
+            if (((users.size() - 1)) >= 1) {
+                user = users.get(users.size() - 1);
+                bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+                bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+                lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+                lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+                dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+                dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+                rtimes.setText(String.valueOf(user.getRem_num()));
+                rinter.setText(String.valueOf(user.getInterval()));
             }
-        });
+        }
+//        userViewModel.insertUser(user);
+//        userViewModel.getAllUsersLive().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
+//            @Override
+//            public void onChanged(List<User> users) {
+////                for(int i=0;i<users.size();i++) {
+//                if((users.get(users.size()-1))!=null){
+//                    user = users.get(users.size()-1);
+//                    bhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(0)));
+//                    bmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getBre_time()).get(1)));
+//                    lhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(0)));
+//                    lmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getLun_time()).get(1)));
+//                    dhour.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(0)));
+//                    dmin.setText(String.valueOf(PillAiderFunction.stringToTwoTime(user.getDin_time()).get(1)));
+//                    rtimes.setText(String.valueOf(user.getRem_num()));
+//                    rinter.setText(String.valueOf(user.getInterval()));
+//                }
+////                }
+////                userViewModel.updateUser(user);
+//            }
+//        });
 
         saveButton = root.findViewById(R.id.set_save);
         saveButton.setOnClickListener(new View.OnClickListener() {

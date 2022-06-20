@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -174,9 +173,10 @@ public class Chart_Fragment extends Fragment {
 //        originalList.add(new Report("5",6,2));
 //        originalList.add(new Report("6",1,2));
 
-        if(originalList == null)
-            Log.d("debug","数据为空");
-        else
+        if(originalList == null) {
+            originalList = new ArrayList<>();
+            Log.d("debug", "数据为空");
+        }else
             Log.d("debug",String.valueOf(originalList.size()));
         List<Entry> total = new ArrayList<>();//总次数
         List<Entry> token = new ArrayList<>();//已服用次数
