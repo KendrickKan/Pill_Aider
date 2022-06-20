@@ -17,6 +17,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.pill_aider.Alarm.AlarmBuilder;
 import com.example.pill_aider.Entity.Reminder;
+import com.example.pill_aider.Entity.Report;
 import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.ReportViewModel;
@@ -100,26 +101,37 @@ public class MainActivity extends AppCompatActivity {
 //            userViewModel.deleteUser(users.get(i));
 //        }
 
+
         // 通知测试！！！！！！！！！！！！！！！！！
 //        User user = new User("10:01","15:20","04:04",5,5);
 //        user.setId(99);
-//        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        List<User> users = userViewModel.getAllUsers();
+//        for(User u:users)
+//            Log.d("用户测试",String.valueOf(u.getId()));
+        User user = userViewModel.getUserByID(1);
 //        if(userViewModel.getUserByID(99) == null)
 //            userViewModel.insertUser(user);
 //        else
 //            userViewModel.updateUser(user);
-//        AlarmBuilder alarm = new AlarmBuilder(user);
-//        Reminder r = new Reminder("iqw",3,2,2,3,3,"kldsjf");
-//        r.setItem_id(9);
-//        ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+        AlarmBuilder alarm = new AlarmBuilder(user);
+        Reminder r = new Reminder("含笑半步颠",3,2,2,3,3,"极乐登仙");
+        r.setItem_id(9);
+        ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
+        List<Reminder> rs = reminderViewModel.getAllReminders();
+        for(Reminder rr:rs) {
+            Log.e("reminder", String.valueOf(rr.getItem_id()));
+            alarm.cancelAlarm(this, rr);
+        }
+//        r = reminderViewModel.getReminderByID(11);
+////        alarm.updateAlarm(this,r);
 //        if(reminderViewModel.getReminderByID(9) == null)
 //            reminderViewModel.insertReminder(r);
+
+//        alarm.cancelAlarm(this,r);
 //        alarm.createAlarm(this,r );
         // ！！！！！！！！！！！！！！
-        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        List<User> users = userViewModel.getAllUsers();
-        for(User u:users)
-            Log.d("用户测试",String.valueOf(u.getId()));
+//        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
 //
 //        AlarmBuilder alarm = new AlarmBuilder(user);
@@ -133,10 +145,21 @@ public class MainActivity extends AppCompatActivity {
 //        reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
 //        reminderViewModel.insertReminder(reminder);
 //
-//        Report report=new Report("2020-06-27",3,3);
 //        reportViewModel =new ViewModelProvider(this).get(ReportViewModel.class);
-//        reportViewModel.insertReport(report);
-
+//        Report report1=new Report("2020-6-13",3,3);
+//        Report report2=new Report("2020-6-14",1,3);
+//        Report report3=new Report("2020-6-15",3,4);
+//        Report report4=new Report("2020-6-16",1,6);
+//        Report report5=new Report("2020-6-17",2,2);
+//        Report report6=new Report("2020-6-18",5,0);
+//        Report report7=new Report("2020-6-19",3,0);
+//        reportViewModel.insertReport(report1);
+//        reportViewModel.insertReport(report2);
+//        reportViewModel.insertReport(report3);
+//        reportViewModel.insertReport(report4);
+//        reportViewModel.insertReport(report5);
+//        reportViewModel.insertReport(report6);
+//        reportViewModel.insertReport(report7);
     }
     @Override
     protected void onResume() {

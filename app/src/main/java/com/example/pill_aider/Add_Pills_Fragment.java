@@ -30,6 +30,8 @@ import com.example.pill_aider.Entity.User;
 import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.UserViewModel;
 
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Add_Pills_Fragment#newInstance} factory method to
@@ -261,6 +263,9 @@ public class Add_Pills_Fragment extends Fragment {
                     UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
                     User user = userViewModel.getAllUsers().get(0);
                     AlarmBuilder alarm = new AlarmBuilder(user);
+                    List<Reminder> res = database_viewModel.getAllReminders();
+
+                    reminder_toinput = res.get(res.size()-1);
                     alarm.createAlarm(getContext() ,reminder_toinput);
                     NavController controller = Navigation.findNavController(v);
                     //添加药品信息并进行数据绑定

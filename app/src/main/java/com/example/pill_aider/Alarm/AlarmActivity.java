@@ -19,6 +19,8 @@ import com.example.pill_aider.ViewModel.ReminderViewModel;
 import com.example.pill_aider.ViewModel.ReportViewModel;
 import com.example.pill_aider.ViewModel.UserViewModel;
 
+import java.util.List;
+
 public class AlarmActivity extends AppCompatActivity {
 
     private TextView item_name, dasage_per_time, item_type, item_time, item_rem, notice;
@@ -30,15 +32,19 @@ public class AlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alarm);
 
         //获取唤起该通知的User与Reminder
-        int userId = getIntent().getIntExtra(AlarmBuilder.ExtraUserId,0);
-        int reminderId = getIntent().getIntExtra(AlarmBuilder.ExtraReminderId, 0);
+        int userId = getIntent().getIntExtra(AlarmBuilder.ExtraUserId,1);
+        int reminderId = getIntent().getIntExtra(AlarmBuilder.ExtraReminderId, 1);
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         User user = userViewModel.getUserByID(userId);
         ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
         Reminder reminder = reminderViewModel.getReminderByID(reminderId);
-        if(reminder == null)
+        if(reminder == null) {
+            List<Reminder> rs = reminderViewModel.getAllReminders();
+            for(Reminder rr:rs)
+                Log.e("alarm reminder",String.valueOf(rr.getItem_id()));
+            Log.e("alarm", "reminder id is" + reminderId);
             Log.e("alarm", "reminder is null!");
-
+        }
         item_name = findViewById(R.id.textView67);
         dasage_per_time = findViewById(R.id.textView64);
         item_type = findViewById(R.id.textView65);

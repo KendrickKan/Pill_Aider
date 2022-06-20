@@ -28,7 +28,7 @@ public class MediaUtil {
                     .Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build());
-            mMediaPlayer.setLooping(true);
+            mMediaPlayer.setLooping(false);
             mMediaPlayer.prepare();
             mMediaPlayer.start();
         } catch (Exception e) {
@@ -41,10 +41,10 @@ public class MediaUtil {
      */
     public static void stopRing(){
         if (mMediaPlayer!=null){
-            if (mMediaPlayer.isPlaying()){
+//            if (mMediaPlayer.isPlaying()){
                 mMediaPlayer.stop();
                 mMediaPlayer.release();
-            }
+//            }
         }
     }
 }
