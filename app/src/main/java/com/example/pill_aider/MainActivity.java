@@ -116,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
 //            reminderViewModel.insertReminder(r);
 //        alarm.createAlarm(this,r );
         // ！！！！！！！！！！！！！！
+        UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        List<User> users = userViewModel.getAllUsers();
+        for(User u:users)
+            Log.d("用户测试",String.valueOf(u.getId()));
 
 //
 //        AlarmBuilder alarm = new AlarmBuilder(user);

@@ -1,11 +1,14 @@
 package com.example.pill_aider.Alarm;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,6 +23,7 @@ public class AlarmActivity extends AppCompatActivity {
 
     private TextView item_name, dasage_per_time, item_type, item_time, item_rem, notice;
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,8 @@ public class AlarmActivity extends AppCompatActivity {
         User user = userViewModel.getUserByID(userId);
         ReminderViewModel reminderViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
         Reminder reminder = reminderViewModel.getReminderByID(reminderId);
+        if(reminder == null)
+            Log.e("alarm", "reminder is null!");
 
         item_name = findViewById(R.id.textView67);
         dasage_per_time = findViewById(R.id.textView64);
@@ -45,6 +51,8 @@ public class AlarmActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast toast = Toast.makeText(AlarmActivity.this,getString(R.string.button_fail), Toast.LENGTH_SHORT);//实例化toast对象
                 toast.show();
+                VibrateUtil.cancel(AlarmActivity.this);
+                MediaUtil.stopRing();
                 finish();
             }
         });
@@ -56,6 +64,8 @@ public class AlarmActivity extends AppCompatActivity {
                 reportViewModel.takeMedicineOnTime();
                 Toast toast = Toast.makeText(AlarmActivity.this,getString(R.string.Button_done), Toast.LENGTH_SHORT);//实例化toast对象
                 toast.show();
+                VibrateUtil.cancel(AlarmActivity.this);
+                MediaUtil.stopRing();
                 finish();
             }
         });
@@ -64,6 +74,9 @@ public class AlarmActivity extends AppCompatActivity {
         dasage_per_time.setText(String.valueOf(reminder.getDasage_per_time()));
         item_type.setText(itemTypeToString(reminder.getItem_type()));
         notice.setText(reminder.getNotice());
+
+        VibrateUtil.vibrate(this);
+        MediaUtil.playRing(this);
     }
 
     private String itemTypeToString(int itemType){
@@ -75,7 +88,7 @@ public class AlarmActivity extends AppCompatActivity {
             case 3:
                 return getString(R.string.pill_type_ml);
             default:
-                return null;
+                return "";
         }
     }
 }

@@ -31,7 +31,7 @@ public class VibrateUtil {
     /**
      * 取消震动
      */
-    public static void virateCancle(Context context){
+    public static void cancel(Context context){
         //关闭震动
         Vibrator vib = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
         vib.cancel();
